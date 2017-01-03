@@ -1,5 +1,53 @@
+.theme-base-custom .sidebar {
+  background-color: #2574A9;
+}
+.theme-base-custom .content a,
+.theme-base-custom .related-posts li a:hover {
+  color: #2574A9;
+}
+
 .content {
   padding-top: 2rem;
+}
+
+.sidebar-about h1 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 2.85rem;
+  margin-bottom: 0;
+}
+
+.lead {
+  line-height: 1.2;
+}
+
+.social-container {
+  margin-bottom: 15px;
+}
+
+.social-container a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  margin-right: 8px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+
+.social-container a:last-child {
+  margin-right: 0;
+}
+
+.social-container a:hover {
+  background-color: #fff;
+}
+
+.social-container a:hover span {
+  color: #2574A9;
 }
 
 @media (min-width: 48em) {
