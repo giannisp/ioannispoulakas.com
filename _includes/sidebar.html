@@ -6,11 +6,12 @@
           {{ site.title }}
         </a>
       </h1>
-      <p class="lead">{{ site.description }}</p>
+      <p class="lead">{{ site.subtitle }}</p>
+      <p class="lead lead-small">{{ site.description }}</p>
     </div>
 
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Blog</a>
 
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
@@ -25,11 +26,22 @@
           {% endif %}
         {% endif %}
       {% endfor %}
-
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
     </nav>
+
+    <div class="social-container">
+      <a href="https://github.com/giannisp" target="_blank">
+        <span class="fa fa-github"></span>
+      </a>
+      <a href="https://gr.linkedin.com/in/ipoulakas" target="_blank">
+        <span class="fa fa-linkedin"></span>
+      </a>
+      <a href="https://twitter.com/ipoulakas" target="_blank">
+        <span class="fa fa-twitter"></span>
+      </a>
+      <a href="mailto:giannis.p@gmail.com" target="_blank">
+        <span class="fa fa-envelope"></span>
+      </a>
+    </div>
 
     <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
   </div>
