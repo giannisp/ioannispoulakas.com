@@ -1,4 +1,11 @@
-# Released under MIT License
+
+## All site's content license:
+
+Copyright (c) 2017 Ioannis Poulakas. All Rights Reserved.
+
+## Template license (https://github.com/poole/hyde):
+
+### Released under MIT License
 
 Copyright (c) 2013 Mark Otto.
 
