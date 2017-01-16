@@ -87,7 +87,7 @@ Lint Ruby files using ruby binary.
 [linter-xmllint](https://atom.io/packages/linter-xmllint)  
 `apm install linter-xmllint`
 
-Lint XML files using [xmllint](xmllint linter).
+Lint XML files using [xmllint](http://xmlsoft.org/xmllint.html).
 
 ### Minimap and related plugins
 
