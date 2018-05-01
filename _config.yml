@@ -21,5 +21,5 @@ paginate:         5
 # Custom
 subtitle:         Ioannis Poulakas
 
-# Gems
-gems:             [jekyll-paginate, jekyll-gist, jekyll-sitemap]
+# Plugins
+plugins:             [jekyll-paginate, jekyll-gist, jekyll-sitemap]
