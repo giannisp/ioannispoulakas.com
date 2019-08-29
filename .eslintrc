@@ -1,0 +1,21 @@
+{
+  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  "plugins": ["babel"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "arrow-body-style": 0,
+    "camelcase": 0,
+    "babel/camelcase": [
+      "error",
+      {
+        "properties": "always",
+        "ignoreDestructuring": false
+      }
+    ],
+    "react/jsx-filename-extension": 0,
+    "react/require-default-props": 0
+  }
+}
