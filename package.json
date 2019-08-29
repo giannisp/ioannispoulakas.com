@@ -9,7 +9,7 @@
     "dev": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "keywords": [
     "gatsby",
