@@ -1,16 +1,19 @@
 # Installation
 
-This website is using [Jekyll 3.x](https://jekyllrb.com/).
+This website is using [Gatsby 2.x](https://www.gatsbyjs.org/).
 
 ## Requirements
 
-- Ruby >=2.x
+- NodeJS 10.x
 
 ## Install
 
-- `gem install bundler`
-- `bundle install`
+- `npm install`
 
-## Run
+## Run for development purposes
 
-- `jekyll serve`
+- `npm run dev`
+
+## Build and deploy to GitHub Pages
+
+- `npm run deploy`
