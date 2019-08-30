@@ -5,13 +5,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGithub,
   faLinkedin,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faRss } from '@fortawesome/free-solid-svg-icons';
+
+import IconLink from './IconLink';
 
 const Sidebar = ({ siteBrand, siteTitle, siteDescription }) => (
   <div className="sidebar">
@@ -38,37 +39,14 @@ const Sidebar = ({ siteBrand, siteTitle, siteDescription }) => (
       </nav>
 
       <div className="social-container">
-        <a
-          href="https://github.com/giannisp"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-        <a
-          href="https://gr.linkedin.com/in/ipoulakas"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faLinkedin} />
-        </a>
-        <a
-          href="https://twitter.com/ipoulakas"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faTwitter} />
-        </a>
-        <a
-          href="mailto:giannis.p@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faEnvelope} />
-        </a>
-        <a href="/rss.xml" target="_blank">
-          <FontAwesomeIcon icon={faRss} />
-        </a>
+        <IconLink url="https://github.com/giannisp" icon={faGithub} />
+        <IconLink
+          url="https://gr.linkedin.com/in/ipoulakas"
+          icon={faLinkedin}
+        />
+        <IconLink url="https://twitter.com/ipoulakas" icon={faTwitter} />
+        <IconLink url="mailto:giannis.p@gmail.com" icon={faEnvelope} />
+        <IconLink url="/rss.xml" icon={faRss} />
       </div>
 
       <p>&copy; {new Date().getFullYear()}. All rights reserved.</p>
