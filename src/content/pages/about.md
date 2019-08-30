@@ -9,7 +9,7 @@ title: 'About'
   If you are looking for a Senior Developer or Team Leader for your next awesome project, feel free to <a href="mailto:giannis.p@gmail.com">contact me</a>!
 </p>
 
-I live in [Thessaloniki, Greece](https://goo.gl/maps/WVo3Uja7t2T2) and I am working remotely for the past 7+ years.
+I live in [Thessaloniki, Greece](https://goo.gl/maps/WVo3Uja7t2T2) and I am working remotely for the past 9+ years.
 
 I have got a BSc degree in Computer Science, and I love working and experimenting with bleeding-edge technologies.
 
