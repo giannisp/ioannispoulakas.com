@@ -18,12 +18,12 @@ Here's how you can easily get started:
 - Start a new repository on GitHub ([check how it should be named and branch details](https://help.github.com/articles/user-organization-and-project-pages/))
 - Create a new RVM or rbenv environment using Ruby >=2.x.
 - Init a new local git repository
-- Start a new Gemfile including at least `github-pages` ([example](https://github.com/giannisp/giannisp.github.io/blob/master/Gemfile)).
+- Start a new Gemfile including at least `github-pages` ([example](https://github.com/giannisp/ioannispoulakas.com/blob/master/Gemfile)).
 - `gem install bundler`
 - `bundle install`
 
 Now you can select a preferred theme, like Hyde, and place it inside the repo.
-GitHub Pages is currently using Jekyll 3.x, so you may need to customize the `_config.yml` for compatibility ([example](https://github.com/giannisp/giannisp.github.io/blob/master/_config.yml)).
+GitHub Pages is currently using Jekyll 3.x, so you may need to customize the `_config.yml` for compatibility ([example](https://github.com/giannisp/ioannispoulakas.com/blob/master/_config.yml)).
 
 Running and viewing the site locally:
 
@@ -35,4 +35,4 @@ Simply push to the appropriate branch on the remote GitHub repository.
 
 You can also use a custom domain with GitHub Pages, which is really cool and [easy to accomplish](https://help.github.com/articles/using-a-custom-domain-with-github-pages/).
 
-The full source code of this site is available at [giannisp/giannisp.github.io](https://github.com/giannisp/giannisp.github.io).
+The full source code of this site is available at [giannisp/ioannispoulakas.com](https://github.com/giannisp/ioannispoulakas.com).
