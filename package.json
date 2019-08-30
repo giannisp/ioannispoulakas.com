@@ -64,6 +64,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "gatsby-cli": "^2.7.41",
     "gh-pages": "^2.1.1"
   }
 }
