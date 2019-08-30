@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software / Web / iOS Developer]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 29 Aug 2019 16:07:14 GMT</lastBuildDate><item><title><![CDATA[How to install Bash 5.0 on macOS]]></title><link>https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/</guid><pubDate>Sun, 10 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Introduction&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software / Web / iOS Developer]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 30 Aug 2019 08:45:52 GMT</lastBuildDate><item><title><![CDATA[How to install Bash 5.0 on macOS]]></title><link>https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/</guid><pubDate>Sun, 10 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;Bash 5.0 has been released during the first week of January 2019.&lt;br&gt;
 It builds upon Bash 4.4.x, fixes bugs, and introduces new features and improvements.&lt;br&gt;
 You can find extended info at the official &lt;a href=&quot;http://lists.gnu.org/archive/html/bug-bash/2019-01/msg00063.html&quot;&gt;release notes&lt;/a&gt;.&lt;br&gt;
@@ -264,12 +264,12 @@ The two-columns responsive theme that is currently running is a customized versi
 &lt;li&gt;Start a new repository on GitHub (&lt;a href=&quot;https://help.github.com/articles/user-organization-and-project-pages/&quot;&gt;check how it should be named and branch details&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;Create a new RVM or rbenv environment using Ruby &gt;=2.x.&lt;/li&gt;
 &lt;li&gt;Init a new local git repository&lt;/li&gt;
-&lt;li&gt;Start a new Gemfile including at least &lt;code&gt;github-pages&lt;/code&gt; (&lt;a href=&quot;https://github.com/giannisp/giannisp.github.io/blob/master/Gemfile&quot;&gt;example&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;Start a new Gemfile including at least &lt;code&gt;github-pages&lt;/code&gt; (&lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com/blob/master/Gemfile&quot;&gt;example&lt;/a&gt;).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;gem install bundler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;bundle install&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Now you can select a preferred theme, like Hyde, and place it inside the repo.
-GitHub Pages is currently using Jekyll 3.x, so you may need to customize the &lt;code&gt;_config.yml&lt;/code&gt; for compatibility (&lt;a href=&quot;https://github.com/giannisp/giannisp.github.io/blob/master/_config.yml&quot;&gt;example&lt;/a&gt;).&lt;/p&gt;
+GitHub Pages is currently using Jekyll 3.x, so you may need to customize the &lt;code&gt;_config.yml&lt;/code&gt; for compatibility (&lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com/blob/master/_config.yml&quot;&gt;example&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Running and viewing the site locally:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Do &lt;code&gt;jekyll serve&lt;/code&gt;&lt;/li&gt;
@@ -278,7 +278,7 @@ GitHub Pages is currently using Jekyll 3.x, so you may need to customize the &lt
 &lt;p&gt;After customizing the look and feel, and adding some content, you should be ready to publish it!&lt;br&gt;
 Simply push to the appropriate branch on the remote GitHub repository.&lt;/p&gt;
 &lt;p&gt;You can also use a custom domain with GitHub Pages, which is really cool and &lt;a href=&quot;https://help.github.com/articles/using-a-custom-domain-with-github-pages/&quot;&gt;easy to accomplish&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The full source code of this site is available at &lt;a href=&quot;https://github.com/giannisp/giannisp.github.io&quot;&gt;giannisp/giannisp.github.io&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World!]]></title><link>https://www.ioannispoulakas.com/2017/01/04/hello-world/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2017/01/04/hello-world/</guid><pubDate>Wed, 04 Jan 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello World! I am &lt;a href=&quot;/about/&quot;&gt;Ioannis&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The full source code of this site is available at &lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com&quot;&gt;giannisp/ioannispoulakas.com&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World!]]></title><link>https://www.ioannispoulakas.com/2017/01/04/hello-world/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2017/01/04/hello-world/</guid><pubDate>Wed, 04 Jan 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello World! I am &lt;a href=&quot;/about/&quot;&gt;Ioannis&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This post marks the beginning of my new personal site and blog!&lt;/p&gt;
 &lt;p&gt;I will be posting about coding-related stuff and tools that are part of my daily routine and I enjoy working with. Also you can expect hints and tips that are coming from my remote-working life.&lt;/p&gt;
 &lt;p&gt;You can follow the blog by subscribing on the &lt;a href=&quot;/rss.xml&quot;&gt;RSS feed&lt;/a&gt;.&lt;/p&gt;</content:encoded></item></channel></rss>
