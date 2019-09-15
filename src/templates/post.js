@@ -54,4 +54,8 @@ PostTemplate.propTypes = {
   }),
 };
 
+PostTemplate.defaultProps = {
+  data: {},
+};
+
 export default PostTemplate;

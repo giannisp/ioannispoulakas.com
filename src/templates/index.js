@@ -90,4 +90,9 @@ IndexTemplate.propTypes = {
   }),
 };
 
+IndexTemplate.defaultProps = {
+  data: {},
+  pageContext: {},
+};
+
 export default IndexTemplate;

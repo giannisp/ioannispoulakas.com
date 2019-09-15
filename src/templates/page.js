@@ -51,4 +51,8 @@ PageTemplate.propTypes = {
   }),
 };
 
+PageTemplate.defaultProps = {
+  data: {},
+};
+
 export default PageTemplate;
