@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software / Web / iOS Developer]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 06 Oct 2019 08:47:24 GMT</lastBuildDate><item><title><![CDATA[Migrating from Jekyll to Gatsby]]></title><link>https://www.ioannispoulakas.com/2019/08/30/migrating-from-jekyll-to-gatsby/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2019/08/30/migrating-from-jekyll-to-gatsby/</guid><pubDate>Fri, 30 Aug 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I have been following &lt;a href=&quot;https://gatsbyjs.org&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Gatsby&lt;/a&gt; for quite some time now, and I finally decided to give it a try on my personal website/blog! This post describes the journey of migrating from Jekyll to Gatsby.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software / Web / iOS Developer]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 26 Dec 2019 08:45:54 GMT</lastBuildDate><item><title><![CDATA[How to manage your Python dependencies with Poetry]]></title><link>https://www.ioannispoulakas.com/2019/12/26/manage-your-python-dependencies-with-poetry/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2019/12/26/manage-your-python-dependencies-with-poetry/</guid><pubDate>Thu, 26 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In the recent past I was excited blogging about &lt;a href=&quot;/2018/01/28/manage-your-python-dependencies-with-pipenv/&quot;&gt;Pipenv&lt;/a&gt;.&lt;br&gt;
+Today I decided to try out &lt;a href=&quot;https://python-poetry.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Poetry&lt;/a&gt; since it reached version 1.0 this month and there is a lot of hype around it.&lt;/p&gt;
+&lt;p&gt;Poetry is a tool for managing Python dependencies as well as virtual environments.&lt;/p&gt;
+&lt;h3&gt;Getting started&lt;/h3&gt;
+&lt;p&gt;Poetry can be installed by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Installation will add Poetry on the home directory and make it automatically available on bash:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export PATH=&quot;$HOME/.poetry/bin:$PATH&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Installing Python dependencies&lt;/h3&gt;
+&lt;p&gt;Poetry is using the standardized file format &lt;a href=&quot;https://www.python.org/dev/peps/pep-0518/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;pyproject.toml&lt;/a&gt;.&lt;br&gt;
+The &lt;code&gt;pyproject.toml&lt;/code&gt; file can be created by simply running &lt;code&gt;poetry init&lt;/code&gt; and following the on-screen instructions.&lt;/p&gt;
+&lt;p&gt;With the &lt;code&gt;pyproject.toml&lt;/code&gt; file in place, let&apos;s try to install the popular library &lt;code&gt;requests&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;poetry add requests
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Poetry will automagically:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a new virtualenv if it doesn&apos;t already exist&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;requests&lt;/code&gt; on the virtualenv&lt;/li&gt;
+&lt;li&gt;Update &lt;code&gt;pyproject.toml&lt;/code&gt; with the &lt;code&gt;requests&lt;/code&gt; entry&lt;/li&gt;
+&lt;li&gt;Create or update &lt;code&gt;poetry.lock&lt;/code&gt; that holds the dependency tree.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note: make sure both &lt;code&gt;pyproject.toml&lt;/code&gt; and &lt;code&gt;poetry.lock&lt;/code&gt; are under version control.&lt;/p&gt;
+&lt;p&gt;Dev dependencies can be installed by using the &lt;code&gt;--dev&lt;/code&gt; flag, for example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;poetry add nose --dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Uninstalling Python dependencies&lt;/h3&gt;
+&lt;p&gt;Poetry can uninstall a dependency by running:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;poetry remove requests
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Running commands on the virtualenv&lt;/h3&gt;
+&lt;p&gt;Any command can be run on the created virtualenv by using &lt;code&gt;poetry run&lt;/code&gt;, for example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;poetry run python --version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alternatively a shell can be spawned by running &lt;code&gt;poetry shell&lt;/code&gt; to avoid prefixing every command.&lt;/p&gt;
+&lt;h3&gt;Managing Python virtual environments for a project&lt;/h3&gt;
+&lt;p&gt;Let&apos;s suppose that a project has to be run specifically on Python version 3.7.5.
+Poetry can make use of pyenv environments or even python executables that are available on the path.&lt;/p&gt;
+&lt;p&gt;Using &lt;code&gt;pyenv&lt;/code&gt; to get Python 3.7.5:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pyenv install 3.7.5
+pyenv local 3.7.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Update Python version at &lt;code&gt;pyproject.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[tool.poetry.dependencies]
+python = &quot;^3.7.5&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Re-install dependencies for Python 3.7.5:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;poetry install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;List all existing virtual environments for a project:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;poetry env list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Switch a virtual environment:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;poetry env use &amp;#x3C;env-name&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Remove a virtual environment:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;poetry env remove &amp;#x3C;env-name&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Other useful Poetry functionalities&lt;/h3&gt;
+&lt;p&gt;Poetry can &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;publish&lt;/code&gt; packages using the respective commands, something that is missing from Pipenv.&lt;br&gt;
+Poetry lock file can be exported to other formats like &lt;code&gt;requirements.txt&lt;/code&gt; by using the &lt;code&gt;export&lt;/code&gt; command.&lt;br&gt;
+Poetry can display package info by using the &lt;code&gt;search&lt;/code&gt; command.&lt;/p&gt;
+&lt;h3&gt;Docker&lt;/h3&gt;
+&lt;p&gt;Deploying dependencies on Docker containers should not require installing them under a virtualenv.&lt;br&gt;
+Poetry is providing a handy command for disabling the default behaviour:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;RUN poetry config virtualenvs.create false \
+  &amp;#x26;&amp;#x26; poetry install --no-dev --no-interaction --no-ansi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Poetry is an awesome tool, it builds upon previous Pipenv features while at the same time is simplifying the virtual environments handling. Since version 1.0 is out it can be considered pretty stable and ready for production.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Migrating from Jekyll to Gatsby]]></title><link>https://www.ioannispoulakas.com/2019/08/30/migrating-from-jekyll-to-gatsby/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2019/08/30/migrating-from-jekyll-to-gatsby/</guid><pubDate>Fri, 30 Aug 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I have been following &lt;a href=&quot;https://gatsbyjs.org&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Gatsby&lt;/a&gt; for quite some time now, and I finally decided to give it a try on my personal website/blog! This post describes the journey of migrating from Jekyll to Gatsby.&lt;/p&gt;
 &lt;h2&gt;Why Gatsby&lt;/h2&gt;
 &lt;p&gt;Gatsby is an awesome open source framework for building blazing fast static websites and apps. What I find most intriguing about Gatsby is that it is powered by technologies that I use on my everyday dev life: JS, React and GraphQL.&lt;/p&gt;
 &lt;p&gt;Gatsby is also backed by a vibrant community, providing open source plugins that aid on accomplishing common tasks in an easy manner.&lt;/p&gt;
