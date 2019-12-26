@@ -40,6 +40,10 @@ const Layout = ({ children }) => {
             property: 'og:type',
             content: 'website',
           },
+          {
+            name: 'google-site-verification',
+            content: '-afp9E5QbuMeEQi8FhPg-0g_sfaI-ZtjDht6epwGxEI',
+          },
         ]}
       />
 
