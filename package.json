@@ -25,9 +25,9 @@
     "url": "https://github.com/giannisp/ioannispoulakas.com/issues"
   },
   "dependencies": {
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
-    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
@@ -41,21 +41,21 @@
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "gatsby": "^2.18.21",
-    "gatsby-image": "^2.2.38",
+    "gatsby": "^2.18.25",
+    "gatsby-image": "^2.2.39",
     "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-feed": "^2.3.26",
-    "gatsby-plugin-google-analytics": "^2.1.32",
+    "gatsby-plugin-google-analytics": "^2.1.33",
     "gatsby-plugin-manifest": "^2.2.37",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.3.13",
-    "gatsby-plugin-sitemap": "^2.2.25",
+    "gatsby-plugin-sitemap": "^2.2.26",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.6.48",
-    "gatsby-transformer-sharp": "^2.3.12",
+    "gatsby-transformer-sharp": "^2.3.13",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -63,7 +63,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "gatsby-cli": "^2.8.26",
+    "gatsby-cli": "^2.8.27",
     "gh-pages": "^2.2.0"
   }
 }
