@@ -21,7 +21,7 @@ const createPostsArchive = async (graphql, actions) => {
     result.data.allMarkdownRemark.totalCount / POSTS_PER_PAGE,
   );
 
-  [...Array(totalPages).keys()].map(index =>
+  [...Array(totalPages).keys()].map((index) =>
     createPage({
       path: index === 0 ? '/' : `/page/${index + 1}`,
       component: path.resolve('./src/templates/index.js'),

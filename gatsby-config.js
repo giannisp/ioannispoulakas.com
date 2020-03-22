@@ -91,7 +91,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge => {
+              allMarkdownRemark.edges.map((edge) => {
                 const postUrl = `${site.siteMetadata.siteUrl}${edge.node.frontmatter.path}`;
 
                 return {
