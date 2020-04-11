@@ -4,7 +4,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import useSiteMetadata from '../hooks/use-site-metadata';
 import Sidebar from './Sidebar';
