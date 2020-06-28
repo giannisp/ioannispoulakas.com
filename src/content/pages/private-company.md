@@ -33,7 +33,11 @@ title: 'Private Company - Legal Info'
       </tr>
       <tr>
         <td>Μέλη</td>
-        <td>Ιωάννης Πούλακας (Μοναδικός Εταίρος - Διαχειριστής)</td>
+        <td>
+          <p>Ιωάννης Πούλακας (Μοναδικός Εταίρος - Διαχειριστής)</p>
+          <p>Αγ. Τριάδος 26, Πεύκα, 57010, Θεσσαλονίκη</p>
+          <a href="mailto:giannis.p@gmail.com">giannis.p@gmail.com</a>
+        </td>
       </tr>
     </tbody>
   </table>

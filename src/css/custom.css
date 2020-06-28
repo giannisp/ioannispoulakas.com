@@ -81,6 +81,10 @@
   margin-top: 30px;
 }
 
+.company-info p {
+  margin: 0;
+}
+
 @media (min-width: 48em) {
   .sidebar-sticky {
     top: 1rem;
