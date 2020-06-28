@@ -7,7 +7,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.ioannispoulakas.com',
-    brand: 'IP',
+    brand: 'Ioannis Poulakas',
     title: 'Ioannis Poulakas',
     indexTitle: 'Ioannis Poulakas - Software Developer',
     description: 'Software / Web / iOS Developer',
@@ -128,6 +128,11 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        exclude: ['/private-company/*'],
+      },
+    },
   ],
 };

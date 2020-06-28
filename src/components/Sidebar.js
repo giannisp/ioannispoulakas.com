@@ -14,14 +14,13 @@ import { faEnvelope, faRss } from '@fortawesome/free-solid-svg-icons';
 
 import IconLink from './IconLink';
 
-const Sidebar = ({ siteBrand, siteTitle, siteDescription }) => (
+const Sidebar = ({ siteBrand, siteDescription }) => (
   <div className="sidebar">
     <div className="container sidebar-sticky">
       <div className="sidebar-about">
         <h1>
           <Link to="/">{siteBrand}</Link>
         </h1>
-        <p className="lead">{siteTitle}</p>
         <p className="lead lead-small">{siteDescription}</p>
       </div>
 
@@ -49,20 +48,23 @@ const Sidebar = ({ siteBrand, siteTitle, siteDescription }) => (
         <IconLink url="/rss.xml" icon={faRss} />
       </div>
 
-      <p>&copy; {new Date().getFullYear()}. All rights reserved.</p>
+      <div className="company-container">
+        <p>&copy; {new Date().getFullYear()}. All rights reserved.</p>
+        <p>
+          <Link to="/private-company/">Private Company</Link>
+        </p>
+      </div>
     </div>
   </div>
 );
 
 Sidebar.propTypes = {
   siteBrand: PropTypes.string,
-  siteTitle: PropTypes.string,
   siteDescription: PropTypes.string,
 };
 
 Sidebar.defaultProps = {
   siteBrand: '',
-  siteTitle: '',
   siteDescription: '',
 };
 
