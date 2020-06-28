@@ -49,7 +49,6 @@ const Layout = ({ children }) => {
 
       <Sidebar
         siteBrand={siteMetadata.brand}
-        siteTitle={siteMetadata.title}
         siteDescription={siteMetadata.description}
       />
 

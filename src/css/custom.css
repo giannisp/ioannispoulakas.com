@@ -11,13 +11,14 @@
 }
 
 .sidebar-about h1 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 2.85rem;
-  margin-bottom: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  margin-bottom: 16px;
 }
 
 .lead {
   line-height: 1.2;
+  font-size: 24px;
 }
 
 .social-container {
@@ -64,6 +65,20 @@
 
 .social-container a:hover svg {
   color: #2574a9;
+}
+
+.company-container {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.company-container p:nth-child(1) {
+  margin-bottom: 0;
+}
+
+.company-info {
+  font-size: 16px;
+  margin-top: 30px;
 }
 
 @media (min-width: 48em) {
