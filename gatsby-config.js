@@ -131,7 +131,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        exclude: ['/private-company/*'],
+        exclude: ['/private-company/'],
       },
     },
   ],
