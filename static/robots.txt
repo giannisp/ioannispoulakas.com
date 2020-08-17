@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /private-company/
 
 Sitemap: https://www.ioannispoulakas.com/sitemap.xml
