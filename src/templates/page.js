@@ -14,12 +14,17 @@ import Layout from '../components/Layout';
 const PageTemplate = ({ data }) => {
   const {
     html,
-    frontmatter: { title },
+    frontmatter: { title, path },
   } = data.markdownRemark;
+
+  const meta = [];
+  if (path === '/private-company/') {
+    meta.push({ name: 'robots', content: 'noindex' });
+  }
 
   return (
     <Layout>
-      <Helmet title={title} />
+      <Helmet title={title} meta={meta} />
 
       <div className="page">
         <h1 className="page-title">{title}</h1>
@@ -35,6 +40,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        path
       }
     }
   }
@@ -46,6 +52,7 @@ PageTemplate.propTypes = {
       html: PropTypes.string,
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
+        path: PropTypes.string,
       }),
     }),
   }),
