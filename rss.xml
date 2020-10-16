@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software / Web / iOS Developer]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 16 Oct 2020 07:07:03 GMT</lastBuildDate><item><title><![CDATA[How to speed up shell load while using NVM]]></title><link>https://www.ioannispoulakas.com/2020/02/22/how-to-speed-up-shell-load-while-using-nvm/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/02/22/how-to-speed-up-shell-load-while-using-nvm/</guid><pubDate>Sat, 22 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;If you are developing any application that depends on NodeJS, using &lt;a href=&quot;https://github.com/nvm-sh/nvm&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;NVM (Node Version Manager)&lt;/a&gt; is highly recommended.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software / Web / iOS Developer]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 16 Oct 2020 08:32:20 GMT</lastBuildDate><item><title><![CDATA[Using the new JSX transform with latest React]]></title><link>https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</guid><pubDate>Fri, 16 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;New JSX transform&lt;/h3&gt;
+&lt;p&gt;React has recently introduced the &lt;a href=&quot;https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;new JSX transform&lt;/a&gt; version.&lt;/p&gt;
+&lt;p&gt;What&apos;s so cool about it?&lt;br&gt;
+You can now use JSX on your components without importing React!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import React from &apos;react&apos;; // no longer required!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Of course if you are using hooks, or other React features, you would still need to import those.&lt;/p&gt;
+&lt;p&gt;Also depending on the project, the compiled output bundle size might be reduced.&lt;/p&gt;
+&lt;h3&gt;Supported React versions&lt;/h3&gt;
+&lt;p&gt;Initially the new JSX transform has been announced for the forthcoming React 17 version. However, in a surprisingly move, React team has backported the new JSX transform to React 16.14.0, 15.7.0, and 0.14.10 versions!&lt;/p&gt;
+&lt;h3&gt;Enable the new JSX tranform with babel/preset-react&lt;/h3&gt;
+&lt;p&gt;The new JSX transform can be enabled on babel/preset-react (v7) by simply setting the &lt;code&gt;runtime&lt;/code&gt; property to &lt;code&gt;automatic&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &quot;presets&quot;: [
+    [
+      &quot;@babel/preset-react&quot;,
+      {
+        &quot;runtime&quot;: &quot;automatic&quot;
+      }
+    ]
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Enable the new JSX transform on Gatsby&lt;/h3&gt;
+&lt;p&gt;Gatsby since version 2.24.5 does support the new JSX transform.&lt;br&gt;
+It can be enabled via the custom Babel configuration file by setting the &lt;code&gt;reactRuntime&lt;/code&gt; property to &lt;code&gt;automatic&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &quot;presets&quot;: [
+    [
+      &quot;babel-preset-gatsby&quot;,
+      {
+        &quot;reactRuntime&quot;: &quot;automatic&quot;,
+      }
+    ]
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Keeping ESLint happy&lt;/h3&gt;
+&lt;p&gt;Good old ESLint will still complain if you try to use JSX on your components without importing React, so you would just have to turn off the following rule:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&quot;react/react-in-jsx-scope&quot;: &quot;off&quot;
+&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title><![CDATA[How to speed up shell load while using NVM]]></title><link>https://www.ioannispoulakas.com/2020/02/22/how-to-speed-up-shell-load-while-using-nvm/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/02/22/how-to-speed-up-shell-load-while-using-nvm/</guid><pubDate>Sat, 22 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;If you are developing any application that depends on NodeJS, using &lt;a href=&quot;https://github.com/nvm-sh/nvm&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;NVM (Node Version Manager)&lt;/a&gt; is highly recommended.&lt;/p&gt;
 &lt;h3&gt;Issue&lt;/h3&gt;
 &lt;p&gt;The only downside of NVM is that it significantly slows down shell prompt initialization while using the default settings.&lt;/p&gt;
 &lt;p&gt;Here is how it is configured by default for bash:&lt;/p&gt;
