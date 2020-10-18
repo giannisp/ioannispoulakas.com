@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software / Web / iOS Developer]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 16 Oct 2020 08:32:20 GMT</lastBuildDate><item><title><![CDATA[Using the new JSX transform with latest React]]></title><link>https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</guid><pubDate>Fri, 16 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;New JSX transform&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software / Web / iOS Developer]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 18 Oct 2020 14:16:18 GMT</lastBuildDate><item><title><![CDATA[Node 14 - Optional chaining and nullish coalescing]]></title><link>https://www.ioannispoulakas.com/2020/10/18/node-14-optional-chaining-and-nullish-coalescing/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/10/18/node-14-optional-chaining-and-nullish-coalescing/</guid><pubDate>Sun, 18 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Node 14&lt;/h3&gt;
+&lt;p&gt;Node 14 is already released and will become the &lt;a href=&quot;https://nodejs.org/en/about/releases/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;next LTS version&lt;/a&gt; during the last week of October 2020.&lt;/p&gt;
+&lt;p&gt;Node 14 is coming with two long awaited JS features, optional chaining and nullish coalescing. Let&apos;s check them out!&lt;/p&gt;
+&lt;h3&gt;Optional chaining&lt;/h3&gt;
+&lt;p&gt;Long gone will be the days of checking for the existence of a deeply nested property using the &lt;code&gt;&amp;#x26;&amp;#x26;&lt;/code&gt; operator or &lt;a href=&quot;https://lodash.com/docs/4.17.15#get&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;lodash.get&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The optional chaining operator is &lt;code&gt;?.&lt;/code&gt; and it permits accessing any nested property in a safe way with a single expression.&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Using the &amp;#x26;&amp;#x26; operator
+if (foo &amp;#x26;&amp;#x26; foo.bar &amp;#x26;&amp;#x26; foo.bar.baz) {
+  // do something with foo.bar.baz
+}
+
+// Using the ?. operator
+if (foo?.bar?.baz) {
+  // do something with foo.bar.baz
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Nullish coalescing&lt;/h3&gt;
+&lt;p&gt;The nullish coalescing logical operator is &lt;code&gt;??&lt;/code&gt; and it returns the right-hand side operand only if the left-hand side operand is &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This sounds similar to the logical &lt;code&gt;OR (||)&lt;/code&gt; operator, however the &lt;code&gt;||&lt;/code&gt; operator returns the right-hand side operand when the left-hand side is any &lt;code&gt;falsy&lt;/code&gt; value.&lt;/p&gt;
+&lt;p&gt;Thus for many cases that a default value has to be assigned only when a value is &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt;, the nullish coalescing operator comes in handy.&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;const foo = 0;
+console.log(foo || 10); // 10
+console.log(foo ?? 10); // 0
+
+const bar = false;
+console.log(bar || true); // true
+console.log(bar ?? true); // false
+
+const baz = &apos;&apos;;
+console.log(baz || &apos;default&apos;); // &apos;default&apos;
+console.log(baz ?? &apos;default&apos;); // &apos;&apos;
+&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title><![CDATA[Using the new JSX transform with latest React]]></title><link>https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</guid><pubDate>Fri, 16 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;New JSX transform&lt;/h3&gt;
 &lt;p&gt;React has recently introduced the &lt;a href=&quot;https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;new JSX transform&lt;/a&gt; version.&lt;/p&gt;
 &lt;p&gt;What&apos;s so cool about it?&lt;br&gt;
 You can now use JSX on your components without importing React!&lt;/p&gt;
