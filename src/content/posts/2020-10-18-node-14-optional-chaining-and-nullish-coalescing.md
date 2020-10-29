@@ -54,3 +54,15 @@ const baz = '';
 console.log(baz || 'default'); // 'default'
 console.log(baz ?? 'default'); // ''
 ```
+
+### Native ESLint support
+
+ESLint has native support for optional chaining and nullish coalescing since 7.5.0 version. However to enable the new syntax it requires the following configuration:
+
+```
+{
+  "parserOptions": {
+    "ecmaVersion": 2020
+  }
+}
+```
