@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software / Web / iOS Developer]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 18 Oct 2020 14:16:18 GMT</lastBuildDate><item><title><![CDATA[Node 14 - Optional chaining and nullish coalescing]]></title><link>https://www.ioannispoulakas.com/2020/10/18/node-14-optional-chaining-and-nullish-coalescing/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/10/18/node-14-optional-chaining-and-nullish-coalescing/</guid><pubDate>Sun, 18 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Node 14&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software / Web / iOS Developer]]></description><link>http://github.com/dylang/node-rss</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 29 Oct 2020 16:28:00 GMT</lastBuildDate><item><title><![CDATA[Node 14 - Optional chaining and nullish coalescing]]></title><link>https://www.ioannispoulakas.com/2020/10/18/node-14-optional-chaining-and-nullish-coalescing/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/10/18/node-14-optional-chaining-and-nullish-coalescing/</guid><pubDate>Sun, 18 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Node 14&lt;/h3&gt;
 &lt;p&gt;Node 14 is already released and will become the &lt;a href=&quot;https://nodejs.org/en/about/releases/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;next LTS version&lt;/a&gt; during the last week of October 2020.&lt;/p&gt;
 &lt;p&gt;Node 14 is coming with two long awaited JS features, optional chaining and nullish coalescing. Let&apos;s check them out!&lt;/p&gt;
 &lt;h3&gt;Optional chaining&lt;/h3&gt;
@@ -31,6 +31,14 @@ console.log(bar ?? true); // false
 const baz = &apos;&apos;;
 console.log(baz || &apos;default&apos;); // &apos;default&apos;
 console.log(baz ?? &apos;default&apos;); // &apos;&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Native ESLint support&lt;/h3&gt;
+&lt;p&gt;ESLint has native support for optional chaining and nullish coalescing since 7.5.0 version. However to enable the new syntax it requires the following configuration:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &quot;parserOptions&quot;: {
+    &quot;ecmaVersion&quot;: 2020
+  }
+}
 &lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title><![CDATA[Using the new JSX transform with latest React]]></title><link>https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</guid><pubDate>Fri, 16 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;New JSX transform&lt;/h3&gt;
 &lt;p&gt;React has recently introduced the &lt;a href=&quot;https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;new JSX transform&lt;/a&gt; version.&lt;/p&gt;
 &lt;p&gt;What&apos;s so cool about it?&lt;br&gt;
