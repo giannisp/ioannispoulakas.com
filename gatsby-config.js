@@ -82,6 +82,7 @@ module.exports = {
             site {
               siteMetadata {
                 siteUrl
+                site_url: siteUrl
                 title
                 description
               }
