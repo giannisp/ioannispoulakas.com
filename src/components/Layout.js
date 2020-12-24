@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet';
 
 import useSiteMetadata from '../hooks/use-site-metadata';
 import Sidebar from './Sidebar';
+import CookieBanner from './CookieBanner';
 
 import '../css/poole.css';
 import '../css/syntax.css';
@@ -52,6 +53,8 @@ const Layout = ({ children }) => {
       />
 
       <div className="content container">{children}</div>
+
+      <CookieBanner />
     </div>
   );
 };
