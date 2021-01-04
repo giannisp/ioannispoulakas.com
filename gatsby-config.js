@@ -47,13 +47,10 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-gdpr-cookies',
+      resolve: 'gatsby-gtag-consent',
       options: {
-        googleAnalytics: {
-          trackingId: 'UA-89805645-1',
-          cookieName: 'gatsby-gdpr-ga',
-          anonymize: true,
-        },
+        trackingId: 'UA-89805645-1',
+        cookieName: 'gatsby-gdpr-ga',
         environments: ['production', 'development'],
       },
     },

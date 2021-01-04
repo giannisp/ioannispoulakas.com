@@ -2,13 +2,10 @@
  * @file CookieBanner component.
  */
 
-import { useLocation } from '@reach/router';
-import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies';
-
 import useCookie from '../hooks/use-cookie';
+import { grantAnalyticsConsent } from '../../plugins/gatsby-gtag-consent';
 
 const CookieBanner = () => {
-  const location = useLocation();
   const [cookieConsent, setCookieConsent] = useCookie('gatsby-gdpr-ga');
 
   return (
@@ -24,7 +21,7 @@ const CookieBanner = () => {
             className="cookie-banner-accept"
             onClick={() => {
               setCookieConsent('true', { expires: 365 });
-              initializeAndTrack(location);
+              grantAnalyticsConsent();
             }}
           >
             Accept
