@@ -1,7 +1,7 @@
 const typography = require('@tailwindcss/typography');
 
 module.exports = {
-  purge: ['./src/**/*.js'],
+  purge: ['./src/**/*.{js,md}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
