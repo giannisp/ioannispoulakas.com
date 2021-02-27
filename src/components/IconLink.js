@@ -10,7 +10,7 @@ const IconLink = ({ url, icon }) => (
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-3xl mr-4"
+    className="text-3xl mr-4 last:mr-0"
   >
     <FontAwesomeIcon icon={icon} />
   </a>
