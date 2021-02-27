@@ -136,5 +136,6 @@ module.exports = {
         exclude: ['/private-company/'],
       },
     },
+    'gatsby-plugin-postcss',
   ],
 };

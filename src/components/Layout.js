@@ -9,16 +9,11 @@ import useSiteMetadata from '../hooks/use-site-metadata';
 import Sidebar from './Sidebar';
 import CookieBanner from './CookieBanner';
 
-import '../css/poole.css';
-import '../css/syntax.css';
-import '../css/hyde.css';
-import '../css/custom.css';
-
 const Layout = ({ children }) => {
   const siteMetadata = useSiteMetadata();
 
   return (
-    <div className="theme-base-custom">
+    <div className="font-body">
       <Helmet
         htmlAttributes={{ lang: 'en' }}
         titleTemplate={`%s - ${siteMetadata.title}`}
@@ -52,7 +47,7 @@ const Layout = ({ children }) => {
         siteDescription={siteMetadata.description}
       />
 
-      <div className="content container">{children}</div>
+      <div className="max-w-6xl px-12 md:ml-92 md:px-24 py-10">{children}</div>
 
       <CookieBanner />
     </div>

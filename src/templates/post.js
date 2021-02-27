@@ -20,9 +20,9 @@ const PostTemplate = ({ data }) => {
     <Layout>
       <Helmet title={title} />
 
-      <div className="page">
-        <h1 className="page-title">{title}</h1>
-        <span className="post-date">{date}</span>
+      <div className="mb-16">
+        <h1 className="text-gray-800 text-4xl font-bold">{title}</h1>
+        <p className="mt-2 mb-8 text-xl text-gray-400">{date}</p>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>

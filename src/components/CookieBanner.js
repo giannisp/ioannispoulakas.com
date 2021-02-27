@@ -10,15 +10,15 @@ const CookieBanner = () => {
 
   return (
     !cookieConsent && (
-      <div className="cookie-banner">
-        <p>
+      <div className="fixed bottom-0 left-0 flex w-full items-center justify-between px-6 py-2 bg-theme-dark-blue">
+        <p className="text-theme-light-blue text-sm pr-4">
           This website uses third party cookies to understand how people are
           interacting with it in order to improve the browsing experience.
         </p>
-        <div className="cookie-banner-button-container">
+        <div className="flex text-md">
           <button
             type="button"
-            className="cookie-banner-accept"
+            className="rounded p-1.5 bg-theme-light-blue text-theme-darkest-blue"
             onClick={() => {
               setCookieConsent('true', { expires: 365 });
               grantAnalyticsConsent();
@@ -28,7 +28,7 @@ const CookieBanner = () => {
           </button>
           <button
             type="button"
-            className="cookie-banner-reject"
+            className="rounded p-1.5 bg-theme-darker-blue text-theme-lightest-blue ml-4"
             onClick={() => {
               setCookieConsent('false', { expires: 7 });
             }}
