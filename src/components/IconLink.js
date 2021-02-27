@@ -6,7 +6,12 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const IconLink = ({ url, icon }) => (
-  <a href={url} target="_blank" rel="noopener noreferrer">
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-3xl mr-4"
+  >
     <FontAwesomeIcon icon={icon} />
   </a>
 );

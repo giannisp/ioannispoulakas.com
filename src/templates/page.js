@@ -25,9 +25,12 @@ const PageTemplate = ({ data }) => {
     <Layout>
       <Helmet title={title} meta={meta} />
 
-      <div className="page">
-        <h1 className="page-title">{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="mb-16">
+        <h1 className="text-gray-800 text-4xl font-bold mb-4">{title}</h1>
+        <div
+          className="prose prose-xl"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </div>
     </Layout>
   );

@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.prose a {
+  @apply text-theme-blue no-underline;
+}
+
+.prose code {
+  @apply px-2 py-2 text-base rounded bg-gray-100 text-typography-red font-normal;
+}
+
+a:hover {
+  @apply underline;
+}

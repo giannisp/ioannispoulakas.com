@@ -4,7 +4,7 @@ path: '/about/'
 title: 'About'
 ---
 
-<p class="message">
+<p class="mb-1 p-5 rounded text-gray-600 bg-gray-100">
   Hello! My name is Ioannis, and I am a senior Software Developer.<br>
   If you are looking to hire an experienced developer or a CTO or even a consultant for your next awesome project, feel free to <a href="mailto:giannis.p@gmail.com">contact me</a>!
 </p>

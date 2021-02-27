@@ -14,29 +14,27 @@ import { faEnvelope, faRss } from '@fortawesome/free-solid-svg-icons';
 import IconLink from './IconLink';
 
 const Sidebar = ({ siteBrand, siteDescription }) => (
-  <div className="sidebar">
-    <div className="container sidebar-sticky">
-      <div className="sidebar-about">
-        <h1>
+  <div className="text-center md:text-left md:fixed md:w-92 md:inset-0 px-10 py-5 bg-theme-blue text-white">
+    <div>
+      <div>
+        <h1 className="text-3xl font-title font-bold">
           <Link to="/">{siteBrand}</Link>
         </h1>
-        <p className="lead lead-small">{siteDescription}</p>
+        <p className="mt-4 text-2xl text-white text-opacity-50 leading-tight">
+          {siteDescription}
+        </p>
       </div>
 
-      <nav className="sidebar-nav">
-        <Link className="sidebar-nav-item" activeClassName="active" to="/">
+      <nav className="mt-5 text-xl">
+        <Link className="block" activeClassName="font-bold" to="/">
           Blog
         </Link>
-        <Link
-          className="sidebar-nav-item"
-          activeClassName="active"
-          to="/about/"
-        >
+        <Link className="block mt-2" activeClassName="font-bold" to="/about/">
           About
         </Link>
       </nav>
 
-      <div className="social-container">
+      <div className="flex mt-5 justify-center md:justify-start last:mr-0">
         <IconLink url="https://github.com/giannisp" icon={faGithub} />
         <IconLink
           url="https://gr.linkedin.com/in/ipoulakas"
@@ -47,12 +45,13 @@ const Sidebar = ({ siteBrand, siteDescription }) => (
         <IconLink url="/rss.xml" icon={faRss} />
       </div>
 
-      <div className="company-container">
-        <p>&copy; {new Date().getFullYear()}. All rights reserved.</p>
-        <p>
-          <Link to="/private-company/">Private Company</Link>
-        </p>
-      </div>
+      <p className="text-lg text-white text-opacity-50 mt-5">
+        &copy; {new Date().getFullYear()}. All rights reserved.
+      </p>
+
+      <p>
+        <Link to="/private-company/">Private Company</Link>
+      </p>
     </div>
   </div>
 );

@@ -25,31 +25,45 @@ const IndexTemplate = ({ data, pageContext }) => {
         <Helmet title={`Posts Archive - Page ${currentPage}`} />
       )}
 
-      <div className="posts">
+      <div>
         {edges.map(({ node: { frontmatter: { path, title, date } } }) => (
-          <div className="post" key={path}>
-            <h1 className="post-title">
+          <div className="mb-12" key={path}>
+            <h1 className="text-theme-blue text-4xl font-bold">
               <Link to={path}>{title}</Link>
             </h1>
 
-            <span className="post-date">{date}</span>
+            <p className="mt-2 text-xl text-gray-400">{date}</p>
           </div>
         ))}
       </div>
 
-      <div className="pagination">
+      <div className="mt-16 mb-24 sm:mb-16 flex text-center text-xl">
         {hasNextPage && (
-          <Link to={nextPagePath} className="pagination-item older">
+          <Link
+            to={nextPagePath}
+            className="w-6/12 p-3 border-t border-b border-l rounded-tl rounded-bl border-gray-200 text-theme-blue hover:bg-gray-100"
+          >
             Older
           </Link>
         )}
-        {!hasNextPage && <span className="pagination-item older">Older</span>}
+        {!hasNextPage && (
+          <span className="w-6/12 p-3 border-t border-b border-l rounded-tl rounder-bl border-gray-200 text-gray-400">
+            Older
+          </span>
+        )}
         {hasPrevPage && (
-          <Link to={prevPagePath} className="pagination-item newer">
+          <Link
+            to={prevPagePath}
+            className="w-6/12 p-3 border border-gray-200 rounded-tr rounded-br text-theme-blue hover:bg-gray-100"
+          >
             Newer
           </Link>
         )}
-        {!hasPrevPage && <span className="pagination-item newer">Newer</span>}
+        {!hasPrevPage && (
+          <span className="w-6/12 p-3 border border-gray-200 rounded-tr rounded-br text-gray-400">
+            Newer
+          </span>
+        )}
       </div>
     </Layout>
   );
