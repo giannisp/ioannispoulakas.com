@@ -1,3 +1,5 @@
+const typography = require('@tailwindcss/typography');
+
 module.exports = {
   purge: ['./src/**/*.js'],
   darkMode: false, // or 'media' or 'class'
@@ -10,11 +12,24 @@ module.exports = {
         'theme-darkest-blue': '#012841',
         'theme-light-blue': '#b7cfdf',
         'theme-lightest-blue': '#d2eafa',
+        'typography-red': '#bf616a',
       },
       spacing: {
         84: '21rem',
         88: '22rem',
         92: '23rem',
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+          },
+        },
       },
     },
     fontFamily: {
@@ -27,5 +42,5 @@ module.exports = {
       margin: ['last'],
     },
   },
-  plugins: [],
+  plugins: [typography],
 };
