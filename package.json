@@ -26,10 +26,10 @@
     "url": "https://github.com/giannisp/ioannispoulakas.com/issues"
   },
   "dependencies": {
-    "@babel/core": "^7.13.1",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.13.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.13.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.13.8",
+    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
+    "@babel/plugin-proposal-optional-chaining": "^7.13.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
