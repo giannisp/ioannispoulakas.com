@@ -10,7 +10,7 @@ module.exports = {
     brand: 'Ioannis Poulakas',
     title: 'Ioannis Poulakas',
     indexTitle: 'Ioannis Poulakas - Software Developer',
-    description: 'Software / Web / iOS Developer',
+    description: 'Software Developer',
   },
   plugins: [
     {

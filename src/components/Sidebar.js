@@ -20,12 +20,12 @@ const Sidebar = ({ siteBrand, siteDescription }) => (
         <h1 className="text-3xl font-title font-bold">
           <Link to="/">{siteBrand}</Link>
         </h1>
-        <p className="mt-4 text-2xl text-white text-opacity-50 leading-tight">
+        <p className="mt-1 text-2xl text-white text-opacity-50 leading-tight">
           {siteDescription}
         </p>
       </div>
 
-      <nav className="mt-5 text-xl">
+      <nav className="mt-5 md:mt-7 text-xl">
         <Link className="block" activeClassName="font-bold" to="/">
           Blog
         </Link>
@@ -34,7 +34,7 @@ const Sidebar = ({ siteBrand, siteDescription }) => (
         </Link>
       </nav>
 
-      <div className="flex mt-5 justify-center md:justify-start">
+      <div className="flex mt-5 md:mt-7 justify-center md:justify-start">
         <IconLink url="https://github.com/giannisp" icon={faGithub} />
         <IconLink
           url="https://gr.linkedin.com/in/ipoulakas"
