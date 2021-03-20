@@ -34,7 +34,7 @@ const Sidebar = ({ siteBrand, siteDescription }) => (
         </Link>
       </nav>
 
-      <div className="flex mt-5 md:mt-7 justify-center md:justify-start">
+      <div className="flex mt-5 md:mt-12 justify-center md:justify-start">
         <IconLink url="https://github.com/giannisp" icon={faGithub} />
         <IconLink
           url="https://gr.linkedin.com/in/ipoulakas"
