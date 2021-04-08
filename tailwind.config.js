@@ -1,6 +1,7 @@
 const typography = require('@tailwindcss/typography');
 
 module.exports = {
+  mode: 'jit',
   purge: ['./src/**/*.{js,md}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -35,11 +36,6 @@ module.exports = {
     fontFamily: {
       title: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
       body: ['"PT Sans"', 'Helvetica', 'Arial', 'sans-serif'],
-    },
-  },
-  variants: {
-    extend: {
-      margin: ['last'],
     },
   },
   plugins: [typography],
