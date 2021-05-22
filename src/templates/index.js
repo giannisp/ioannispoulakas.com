@@ -9,13 +9,8 @@ import { Helmet } from 'react-helmet';
 import Layout from '../components/Layout';
 
 const IndexTemplate = ({ data, pageContext }) => {
-  const {
-    currentPage,
-    hasNextPage,
-    hasPrevPage,
-    prevPagePath,
-    nextPagePath,
-  } = pageContext;
+  const { currentPage, hasNextPage, hasPrevPage, prevPagePath, nextPagePath } =
+    pageContext;
 
   const { edges } = data.allMarkdownRemark;
 
@@ -26,15 +21,21 @@ const IndexTemplate = ({ data, pageContext }) => {
       )}
 
       <div>
-        {edges.map(({ node: { frontmatter: { path, title, date } } }) => (
-          <div className="mb-12" key={path}>
-            <h1 className="text-theme-blue text-4xl font-bold">
-              <Link to={path}>{title}</Link>
-            </h1>
+        {edges.map(
+          ({
+            node: {
+              frontmatter: { path, title, date },
+            },
+          }) => (
+            <div className="mb-12" key={path}>
+              <h1 className="text-theme-blue text-4xl font-bold">
+                <Link to={path}>{title}</Link>
+              </h1>
 
-            <p className="mt-2 text-xl text-gray-400">{date}</p>
-          </div>
-        ))}
+              <p className="mt-2 text-xl text-gray-400">{date}</p>
+            </div>
+          ),
+        )}
       </div>
 
       <div className="mt-16 mb-24 sm:mb-16 flex text-center text-xl">
