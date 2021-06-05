@@ -39,7 +39,7 @@
     "autoprefixer": "^10.2.6",
     "babel-eslint": "^10.1.0",
     "babel-preset-gatsby": "^1.6.0",
-    "eslint": "^7.27.0",
+    "eslint": "^7.28.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
@@ -49,7 +49,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "gatsby": "^3.6.1",
+    "gatsby": "^3.6.2",
     "gatsby-plugin-eslint": "^3.0.0",
     "gatsby-plugin-feed": "^3.6.0",
     "gatsby-plugin-image": "^1.6.0",
@@ -70,7 +70,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-refresh": "^0.10.0",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.4"
   },
   "devDependencies": {
     "gatsby-cli": "^3.6.0",
