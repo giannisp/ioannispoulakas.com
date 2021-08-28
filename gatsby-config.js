@@ -16,12 +16,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
-        test: /\.js$/,
-        exclude: /(node_modules|cache|public)/,
-        options: {
-          emitWarning: true,
-          failOnError: true,
-        },
+        extensions: 'js',
+        exclude: ['node_modules', 'cache', 'public'],
       },
     },
     'gatsby-plugin-react-helmet',
