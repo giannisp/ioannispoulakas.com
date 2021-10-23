@@ -7,14 +7,6 @@
   },
   "rules": {
     "arrow-body-style": 0,
-    "camelcase": 0,
-    "babel/camelcase": [
-      "error",
-      {
-        "properties": "always",
-        "ignoreDestructuring": false
-      }
-    ],
     "react/jsx-filename-extension": 0,
     "react/react-in-jsx-scope": "off"
   }
