@@ -34,3 +34,5 @@ jobs:
 
       - name: ESLint
         run: npm run eslint
+        env:
+          NODE_ENV: test

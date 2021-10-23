@@ -1,20 +1,15 @@
 {
   "extends": ["airbnb", "plugin:prettier/recommended", "prettier"],
   "plugins": ["babel"],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
   "env": {
     "browser": true
   },
   "rules": {
     "arrow-body-style": 0,
-    "camelcase": 0,
-    "babel/camelcase": [
-      "error",
-      {
-        "properties": "always",
-        "ignoreDestructuring": false
-      }
-    ],
     "react/jsx-filename-extension": 0,
     "react/react-in-jsx-scope": "off"
   }
