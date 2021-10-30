@@ -4,7 +4,7 @@ This website is using [Gatsby 3.x](https://www.gatsbyjs.org/).
 
 ## Requirements
 
-- NodeJS 14.x
+- NodeJS 16.x
 
 ## Install
 
