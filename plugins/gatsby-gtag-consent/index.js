@@ -2,8 +2,6 @@
  * @file gatsby-gtag-consent plugin helpers.
  */
 
-/* eslint-disable babel/camelcase */
-
 const env = process.env.NODE_ENV || 'development';
 
 export const isEnvironmentValid = (environments) => environments.includes(env);

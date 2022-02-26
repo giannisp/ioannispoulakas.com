@@ -2,8 +2,6 @@
  * @file gatsby-browser for gatsby-gtag-consent plugin.
  */
 
-/* eslint-disable babel/camelcase */
-
 import Cookies from 'js-cookie';
 
 import { isEnvironmentValid, grantAnalyticsConsent } from './index';

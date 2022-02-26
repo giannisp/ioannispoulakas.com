@@ -2,9 +2,8 @@
  * @file Gatsby configuration file.
  */
 
-/* eslint-disable babel/camelcase */
-
 module.exports = {
+  jsxRuntime: 'automatic',
   siteMetadata: {
     siteUrl: 'https://www.ioannispoulakas.com',
     brand: 'Ioannis Poulakas',
