@@ -94,7 +94,7 @@ export const query = graphql`
 IndexTemplate.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.object),
+      edges: PropTypes.arrayOf(PropTypes.shape),
     }),
   }),
   pageContext: PropTypes.shape({
