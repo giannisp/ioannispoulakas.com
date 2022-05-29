@@ -67,6 +67,6 @@
   },
   "devDependencies": {
     "gatsby-cli": "^4.15.0",
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^4.0.0"
   }
 }
