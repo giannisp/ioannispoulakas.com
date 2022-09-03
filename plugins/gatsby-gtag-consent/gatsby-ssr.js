@@ -3,7 +3,6 @@
  */
 
 /* eslint-disable import/prefer-default-export */
-/* eslint-disable babel/camelcase */
 /* eslint-disable react/no-danger */
 
 import React from 'react';

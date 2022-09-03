@@ -5,10 +5,26 @@
 /* eslint-disable react/no-danger */
 
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
+
+const propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+        date: PropTypes.string,
+      }),
+    }),
+  }),
+};
+
+const defaultProps = {
+  data: {},
+};
 
 const PostTemplate = ({ data }) => {
   const {
@@ -18,8 +34,6 @@ const PostTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet title={title} />
-
       <div className="mb-16">
         <h1 className="text-gray-800 text-4xl font-bold">{title}</h1>
         <p className="mt-2 mb-8 text-xl text-gray-400">{date}</p>
@@ -44,20 +58,16 @@ export const postQuery = graphql`
   }
 `;
 
-PostTemplate.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      html: PropTypes.string,
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string,
-        date: PropTypes.string,
-      }),
-    }),
-  }),
-};
+PostTemplate.propTypes = propTypes;
+PostTemplate.defaultProps = defaultProps;
 
-PostTemplate.defaultProps = {
-  data: {},
+/* eslint-disable react/prop-types */
+export const Head = ({ data }) => {
+  const {
+    frontmatter: { title },
+  } = data.markdownRemark;
+
+  return <Seo title={title} />;
 };
 
 export default PostTemplate;

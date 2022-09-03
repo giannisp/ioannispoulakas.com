@@ -4,22 +4,37 @@
 
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
-import { Helmet } from 'react-helmet';
 
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
+
+const propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape),
+    }),
+  }),
+  pageContext: PropTypes.shape({
+    currentPage: PropTypes.number,
+    hasNextPage: PropTypes.bool,
+    hasPrevPage: PropTypes.bool,
+    prevPagePath: PropTypes.string,
+    nextPagePath: PropTypes.string,
+  }),
+};
+
+const defaultProps = {
+  data: {},
+  pageContext: {},
+};
 
 const IndexTemplate = ({ data, pageContext }) => {
-  const { currentPage, hasNextPage, hasPrevPage, prevPagePath, nextPagePath } =
-    pageContext;
+  const { hasNextPage, hasPrevPage, prevPagePath, nextPagePath } = pageContext;
 
   const { edges } = data.allMarkdownRemark;
 
   return (
     <Layout>
-      {currentPage > 1 && (
-        <Helmet title={`Posts Archive - Page ${currentPage}`} />
-      )}
-
       <div>
         {edges.map(
           ({
@@ -91,24 +106,16 @@ export const query = graphql`
   }
 `;
 
-IndexTemplate.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape),
-    }),
-  }),
-  pageContext: PropTypes.shape({
-    currentPage: PropTypes.number,
-    hasNextPage: PropTypes.bool,
-    hasPrevPage: PropTypes.bool,
-    prevPagePath: PropTypes.string,
-    nextPagePath: PropTypes.string,
-  }),
-};
+IndexTemplate.propTypes = propTypes;
+IndexTemplate.defaultProps = defaultProps;
 
-IndexTemplate.defaultProps = {
-  data: {},
-  pageContext: {},
+/* eslint-disable react/prop-types */
+export const Head = ({ pageContext }) => {
+  const { currentPage } = pageContext;
+  const title =
+    currentPage > 1 ? `Posts Archive - Page ${currentPage}` : undefined;
+
+  return <Seo title={title} />;
 };
 
 export default IndexTemplate;
