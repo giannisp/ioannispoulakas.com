@@ -5,6 +5,11 @@
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+const propTypes = {
+  url: PropTypes.string.isRequired,
+  icon: PropTypes.shape().isRequired,
+};
+
 const IconLink = ({ url, icon }) => (
   <a
     href={url}
@@ -16,9 +21,6 @@ const IconLink = ({ url, icon }) => (
   </a>
 );
 
-IconLink.propTypes = {
-  url: PropTypes.string.isRequired,
-  icon: PropTypes.shape().isRequired,
-};
+IconLink.propTypes = propTypes;
 
 export default IconLink;

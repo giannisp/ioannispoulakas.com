@@ -13,6 +13,16 @@ import { faEnvelope, faRss } from '@fortawesome/free-solid-svg-icons';
 
 import IconLink from './IconLink';
 
+const propTypes = {
+  siteBrand: PropTypes.string,
+  siteDescription: PropTypes.string,
+};
+
+const defaultProps = {
+  siteBrand: '',
+  siteDescription: '',
+};
+
 const Sidebar = ({ siteBrand, siteDescription }) => (
   <div className="text-center md:text-left md:fixed md:w-92 md:inset-0 px-10 py-5 bg-theme-blue text-white">
     <div>
@@ -56,14 +66,7 @@ const Sidebar = ({ siteBrand, siteDescription }) => (
   </div>
 );
 
-Sidebar.propTypes = {
-  siteBrand: PropTypes.string,
-  siteDescription: PropTypes.string,
-};
-
-Sidebar.defaultProps = {
-  siteBrand: '',
-  siteDescription: '',
-};
+Sidebar.propTypes = propTypes;
+Sidebar.defaultProps = defaultProps;
 
 export default Sidebar;

@@ -10,6 +10,22 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 
+const propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+        date: PropTypes.string,
+      }),
+    }),
+  }),
+};
+
+const defaultProps = {
+  data: {},
+};
+
 const PostTemplate = ({ data }) => {
   const {
     html,
@@ -42,21 +58,8 @@ export const postQuery = graphql`
   }
 `;
 
-PostTemplate.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      html: PropTypes.string,
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string,
-        date: PropTypes.string,
-      }),
-    }),
-  }),
-};
-
-PostTemplate.defaultProps = {
-  data: {},
-};
+PostTemplate.propTypes = propTypes;
+PostTemplate.defaultProps = defaultProps;
 
 /* eslint-disable react/prop-types */
 export const Head = ({ data }) => {

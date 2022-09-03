@@ -8,6 +8,26 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 
+const propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape),
+    }),
+  }),
+  pageContext: PropTypes.shape({
+    currentPage: PropTypes.number,
+    hasNextPage: PropTypes.bool,
+    hasPrevPage: PropTypes.bool,
+    prevPagePath: PropTypes.string,
+    nextPagePath: PropTypes.string,
+  }),
+};
+
+const defaultProps = {
+  data: {},
+  pageContext: {},
+};
+
 const IndexTemplate = ({ data, pageContext }) => {
   const { hasNextPage, hasPrevPage, prevPagePath, nextPagePath } = pageContext;
 
@@ -86,25 +106,8 @@ export const query = graphql`
   }
 `;
 
-IndexTemplate.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape),
-    }),
-  }),
-  pageContext: PropTypes.shape({
-    currentPage: PropTypes.number,
-    hasNextPage: PropTypes.bool,
-    hasPrevPage: PropTypes.bool,
-    prevPagePath: PropTypes.string,
-    nextPagePath: PropTypes.string,
-  }),
-};
-
-IndexTemplate.defaultProps = {
-  data: {},
-  pageContext: {},
-};
+IndexTemplate.propTypes = propTypes;
+IndexTemplate.defaultProps = defaultProps;
 
 /* eslint-disable react/prop-types */
 export const Head = ({ pageContext }) => {

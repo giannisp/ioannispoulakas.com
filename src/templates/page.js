@@ -10,6 +10,21 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 
+const propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+    }),
+  }),
+};
+
+const defaultProps = {
+  data: {},
+};
+
 const PageTemplate = ({ data }) => {
   const {
     html,
@@ -41,20 +56,8 @@ export const pageQuery = graphql`
   }
 `;
 
-PageTemplate.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      html: PropTypes.string,
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string,
-      }),
-    }),
-  }),
-};
-
-PageTemplate.defaultProps = {
-  data: {},
-};
+PageTemplate.propTypes = propTypes;
+PageTemplate.defaultProps = defaultProps;
 
 /* eslint-disable react/prop-types */
 export const Head = ({ data }) => {

@@ -8,6 +8,10 @@ import useSiteMetadata from '../hooks/use-site-metadata';
 import Sidebar from './Sidebar';
 import CookieBanner from './CookieBanner';
 
+const propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 const Layout = ({ children }) => {
   const siteMetadata = useSiteMetadata();
 
@@ -25,8 +29,6 @@ const Layout = ({ children }) => {
   );
 };
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+Layout.propTypes = propTypes;
 
 export default Layout;
