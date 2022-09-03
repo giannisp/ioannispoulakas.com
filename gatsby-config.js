@@ -19,7 +19,6 @@ module.exports = {
         exclude: ['node_modules', 'cache', 'public'],
       },
     },
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

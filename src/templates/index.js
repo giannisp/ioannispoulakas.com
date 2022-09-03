@@ -4,22 +4,17 @@
 
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
-import { Helmet } from 'react-helmet';
 
 import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 
 const IndexTemplate = ({ data, pageContext }) => {
-  const { currentPage, hasNextPage, hasPrevPage, prevPagePath, nextPagePath } =
-    pageContext;
+  const { hasNextPage, hasPrevPage, prevPagePath, nextPagePath } = pageContext;
 
   const { edges } = data.allMarkdownRemark;
 
   return (
     <Layout>
-      {currentPage > 1 && (
-        <Helmet title={`Posts Archive - Page ${currentPage}`} />
-      )}
-
       <div>
         {edges.map(
           ({
@@ -109,6 +104,15 @@ IndexTemplate.propTypes = {
 IndexTemplate.defaultProps = {
   data: {},
   pageContext: {},
+};
+
+/* eslint-disable react/prop-types */
+export const Head = ({ pageContext }) => {
+  const { currentPage } = pageContext;
+  const title =
+    currentPage > 1 ? `Posts Archive - Page ${currentPage}` : undefined;
+
+  return <Seo title={title} />;
 };
 
 export default IndexTemplate;

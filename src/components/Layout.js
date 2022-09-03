@@ -3,7 +3,6 @@
  */
 
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 
 import useSiteMetadata from '../hooks/use-site-metadata';
 import Sidebar from './Sidebar';
@@ -14,34 +13,6 @@ const Layout = ({ children }) => {
 
   return (
     <div className="font-body">
-      <Helmet
-        htmlAttributes={{ lang: 'en' }}
-        titleTemplate={`%s - ${siteMetadata.title}`}
-        defaultTitle={siteMetadata.indexTitle}
-        meta={[
-          {
-            name: 'description',
-            content: siteMetadata.description,
-          },
-          {
-            property: 'og:title',
-            content: siteMetadata.title,
-          },
-          {
-            property: 'og:description',
-            content: siteMetadata.description,
-          },
-          {
-            property: 'og:type',
-            content: 'website',
-          },
-          {
-            name: 'google-site-verification',
-            content: '-afp9E5QbuMeEQi8FhPg-0g_sfaI-ZtjDht6epwGxEI',
-          },
-        ]}
-      />
-
       <Sidebar
         siteBrand={siteMetadata.brand}
         siteDescription={siteMetadata.description}
