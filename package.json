@@ -41,18 +41,17 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "gatsby": "^4.24.5",
-    "gatsby-plugin-eslint": "^4.0.2",
-    "gatsby-plugin-feed": "^4.24.0",
-    "gatsby-plugin-image": "^2.24.0",
-    "gatsby-plugin-manifest": "^4.24.0",
-    "gatsby-plugin-postcss": "^5.24.0",
-    "gatsby-plugin-sharp": "^4.24.0",
-    "gatsby-plugin-sitemap": "^5.24.0",
+    "gatsby": "^5.0.1",
+    "gatsby-plugin-feed": "^5.0.0",
+    "gatsby-plugin-image": "^3.0.0",
+    "gatsby-plugin-manifest": "^5.0.0",
+    "gatsby-plugin-postcss": "^6.0.0",
+    "gatsby-plugin-sharp": "^5.0.0",
+    "gatsby-plugin-sitemap": "^6.0.0",
     "gatsby-remark-external-links": "0.0.4",
-    "gatsby-source-filesystem": "^4.24.0",
-    "gatsby-transformer-remark": "^5.24.0",
-    "gatsby-transformer-sharp": "^4.24.0",
+    "gatsby-source-filesystem": "^5.0.0",
+    "gatsby-transformer-remark": "^6.0.0",
+    "gatsby-transformer-sharp": "^5.0.0",
     "postcss": "^8.4.19",
     "prettier": "^2.7.1",
     "prop-types": "^15.8.1",
@@ -62,7 +61,7 @@
     "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
-    "gatsby-cli": "^4.24.0",
+    "gatsby-cli": "^5.0.0",
     "gh-pages": "^4.0.0"
   }
 }

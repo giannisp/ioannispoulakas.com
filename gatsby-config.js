@@ -13,13 +13,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-eslint',
-      options: {
-        extensions: 'js',
-        exclude: ['node_modules', 'cache', 'public'],
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
@@ -94,7 +87,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   limit: 1000,
-                  sort: { fields: [frontmatter___date], order: DESC },
+                  sort: { frontmatter: { date: DESC } },
                   filter: { frontmatter: { template: { eq: "post" } } }
                 ) {
                   edges {
