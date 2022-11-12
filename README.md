@@ -1,6 +1,6 @@
 # Installation
 
-This website is using [Gatsby 3.x](https://www.gatsbyjs.org/).
+This website is using [Gatsby 5.x](https://www.gatsbyjs.org/).
 
 ## Requirements
 
