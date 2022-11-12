@@ -41,14 +41,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-gtag-consent',
-      options: {
-        trackingId: 'UA-89805645-1',
-        cookieName: 'gatsby-gdpr-ga',
-        environments: ['production', 'development'],
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',

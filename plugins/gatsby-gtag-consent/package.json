@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "js-cookie": "^2.2.1",
-    "react": "^16.14.0"
-  }
-}
