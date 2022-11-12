@@ -11,7 +11,6 @@
     "serve": "gatsby serve",
     "deploy": "gatsby build && gh-pages -d public",
     "eslint": "eslint src *.js",
-    "postinstall": "cd plugins/gatsby-gtag-consent && npm i",
     "clean": "gatsby clean"
   },
   "keywords": [
@@ -54,7 +53,6 @@
     "gatsby-source-filesystem": "^4.24.0",
     "gatsby-transformer-remark": "^5.24.0",
     "gatsby-transformer-sharp": "^4.24.0",
-    "js-cookie": "^3.0.1",
     "postcss": "^8.4.19",
     "prettier": "^2.7.1",
     "prop-types": "^15.8.1",
