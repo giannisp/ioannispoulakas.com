@@ -91,7 +91,7 @@ export const query = graphql`
       limit: $postsLimit
       skip: $postsOffset
       filter: { frontmatter: { template: { eq: "post" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {

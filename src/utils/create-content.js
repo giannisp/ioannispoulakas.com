@@ -9,10 +9,7 @@ const createContent = async (graphql, actions) => {
 
   const result = await graphql(`
     query content {
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 9999
-      ) {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 9999) {
         edges {
           node {
             frontmatter {
