@@ -26,7 +26,7 @@
     "url": "https://github.com/giannisp/ioannispoulakas.com/issues"
   },
   "dependencies": {
-    "@babel/core": "^7.20.7",
+    "@babel/core": "^7.20.12",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
@@ -35,7 +35,7 @@
     "autoprefixer": "^10.4.13",
     "eslint": "^8.31.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
@@ -52,8 +52,8 @@
     "gatsby-source-filesystem": "^5.3.1",
     "gatsby-transformer-remark": "^6.3.2",
     "gatsby-transformer-sharp": "^5.3.1",
-    "postcss": "^8.4.20",
-    "prettier": "^2.8.1",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
