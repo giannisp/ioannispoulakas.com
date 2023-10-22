@@ -33,7 +33,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
-    "eslint": "^8.51.0",
+    "eslint": "^8.52.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
@@ -41,17 +41,17 @@
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "gatsby": "^5.12.6",
-    "gatsby-plugin-feed": "^5.12.1",
-    "gatsby-plugin-image": "^3.12.1",
-    "gatsby-plugin-manifest": "^5.12.1",
+    "gatsby": "^5.12.8",
+    "gatsby-plugin-feed": "^5.12.2",
+    "gatsby-plugin-image": "^3.12.2",
+    "gatsby-plugin-manifest": "^5.12.2",
     "gatsby-plugin-postcss": "^6.12.0",
-    "gatsby-plugin-sharp": "^5.12.1",
-    "gatsby-plugin-sitemap": "^6.12.1",
+    "gatsby-plugin-sharp": "^5.12.2",
+    "gatsby-plugin-sitemap": "^6.12.2",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-source-filesystem": "^5.12.0",
-    "gatsby-transformer-remark": "^6.12.1",
-    "gatsby-transformer-sharp": "^5.12.1",
+    "gatsby-transformer-remark": "^6.12.2",
+    "gatsby-transformer-sharp": "^5.12.2",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prop-types": "^15.8.1",
@@ -61,7 +61,7 @@
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
-    "gatsby-cli": "^5.12.2",
+    "gatsby-cli": "^5.12.3",
     "gh-pages": "^6.0.0"
   }
 }
