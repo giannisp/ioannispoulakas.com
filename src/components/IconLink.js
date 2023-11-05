@@ -16,6 +16,7 @@ const IconLink = ({ url, icon }) => (
     target="_blank"
     rel="noopener noreferrer"
     className="text-3xl mr-5 last:mr-0 transition duration-300 ease-in-out hover:scale-150"
+    aria-label="Link"
   >
     <FontAwesomeIcon icon={icon} />
   </a>
