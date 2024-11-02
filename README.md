@@ -4,7 +4,7 @@ This website is using [Gatsby 5.x](https://www.gatsbyjs.org/).
 
 ## Requirements
 
-- NodeJS 20.x
+- NodeJS 22.x
 
 ## Install
 
