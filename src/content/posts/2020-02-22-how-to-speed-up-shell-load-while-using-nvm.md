@@ -13,7 +13,7 @@ The only downside of NVM is that it significantly slows down shell prompt initia
 
 Here is how it is configured by default for bash:
 
-```
+```bash
 # Load NVM
 export NVM_DIR=~/.nvm
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
@@ -21,7 +21,7 @@ export NVM_DIR=~/.nvm
 
 And here is how bad it performs:
 
-```
+```console
 $ time source ~/.bash_profile
 
 real 0m0.478s
@@ -35,7 +35,7 @@ There are simple bash scripts that can lazy load NVM during the first invoke of 
 
 Here is how a minimal bash script would look like for capturing the `node` command and lazy loading NVM:
 
-```
+```bash
 lazy_load_nvm() {
   unset -f node
   export NVM_DIR=~/.nvm
@@ -58,7 +58,7 @@ However without an autoloaded node version, there should still exist a fallback 
 
 Putting those two together on the bash init is as simple as:
 
-```
+```bash
 # Add default node to path
 export PATH=~/.nvm/versions/node/v12.16.1/bin:$PATH
 
@@ -69,7 +69,7 @@ export NVM_DIR=~/.nvm
 
 Let's measure the startup time:
 
-```
+```console
 $ time source ~/.bash_profile
 
 real 0m0.051s

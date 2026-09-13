@@ -14,13 +14,13 @@ Poetry is a tool for managing Python dependencies as well as virtual environment
 
 Poetry can be installed by running:
 
-```
+```bash
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 ```
 
 Installation will add Poetry on the home directory and make it automatically available on bash:
 
-```
+```bash
 export PATH="$HOME/.poetry/bin:$PATH"
 ```
 
@@ -31,7 +31,7 @@ The `pyproject.toml` file can be created by simply running `poetry init` and fol
 
 With the `pyproject.toml` file in place, let's try to install the popular library `requests`:
 
-```
+```bash
 poetry add requests
 ```
 
@@ -46,7 +46,7 @@ Note: make sure both `pyproject.toml` and `poetry.lock` are under version contro
 
 Dev dependencies can be installed by using the `--dev` flag, for example:
 
-```
+```bash
 poetry add nose --dev
 ```
 
@@ -54,7 +54,7 @@ poetry add nose --dev
 
 Poetry can uninstall a dependency by running:
 
-```
+```bash
 poetry remove requests
 ```
 
@@ -62,7 +62,7 @@ poetry remove requests
 
 Any command can be run on the created virtualenv by using `poetry run`, for example:
 
-```
+```bash
 poetry run python --version
 ```
 
@@ -75,39 +75,39 @@ Poetry can make use of pyenv environments or even python executables that are av
 
 Using `pyenv` to get Python 3.7.5:
 
-```
+```bash
 pyenv install 3.7.5
 pyenv local 3.7.5
 ```
 
 Update Python version at `pyproject.toml`:
 
-```
+```toml
 [tool.poetry.dependencies]
 python = "^3.7.5"
 ```
 
 Re-install dependencies for Python 3.7.5:
 
-```
+```bash
 poetry install
 ```
 
 List all existing virtual environments for a project:
 
-```
+```bash
 poetry env list
 ```
 
 Switch a virtual environment:
 
-```
+```bash
 poetry env use <env-name>
 ```
 
 Remove a virtual environment:
 
-```
+```bash
 poetry env remove <env-name>
 ```
 
@@ -122,7 +122,7 @@ Poetry can display package info by using the `search` command.
 Deploying dependencies on Docker containers should not require installing them under a virtualenv.  
 Poetry is providing a handy command for disabling the default behaviour:
 
-```
+```dockerfile
 RUN poetry config virtualenvs.create false \
   && poetry install --no-dev --no-interaction --no-ansi
 ```

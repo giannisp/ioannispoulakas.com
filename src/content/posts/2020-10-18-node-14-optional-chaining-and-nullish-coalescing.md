@@ -19,7 +19,7 @@ The optional chaining operator is `?.` and it permits accessing any nested prope
 
 Example:
 
-```
+```js
 // Using the && operator
 if (foo && foo.bar && foo.bar.baz) {
   // do something with foo.bar.baz
@@ -41,7 +41,7 @@ Thus for many cases that a default value has to be assigned only when a value is
 
 Example:
 
-```
+```js
 const foo = 0;
 console.log(foo || 10); // 10
 console.log(foo ?? 10); // 0
@@ -59,7 +59,7 @@ console.log(baz ?? 'default'); // ''
 
 ESLint has native support for optional chaining and nullish coalescing since 7.5.0 version. However to enable the new syntax it requires the following configuration:
 
-```
+```json
 {
   "parserOptions": {
     "ecmaVersion": 2020

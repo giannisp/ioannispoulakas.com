@@ -12,7 +12,7 @@ React has recently introduced the [new JSX transform](https://reactjs.org/blog/2
 What's so cool about it?  
 You can now use JSX on your components without importing React!
 
-```
+```jsx
 import React from 'react'; // no longer required!
 ```
 
@@ -28,7 +28,7 @@ Initially the new JSX transform has been announced for the forthcoming React 17 
 
 The new JSX transform can be enabled on babel/preset-react (v7) by simply setting the `runtime` property to `automatic`:
 
-```
+```json
 {
   "presets": [
     [
@@ -46,7 +46,7 @@ The new JSX transform can be enabled on babel/preset-react (v7) by simply settin
 Gatsby since version 2.24.5 does support the new JSX transform.  
 It can be enabled via the custom Babel configuration file by setting the `reactRuntime` property to `automatic`:
 
-```
+```json
 {
   "presets": [
     [
@@ -63,6 +63,6 @@ It can be enabled via the custom Babel configuration file by setting the `reactR
 
 Good old ESLint will still complain if you try to use JSX on your components without importing React, so you would just have to turn off the following rule:
 
-```
+```json
 "react/react-in-jsx-scope": "off"
 ```
