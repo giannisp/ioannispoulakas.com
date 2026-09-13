@@ -1,212 +1,191 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ioannis Poulakas]]></title><description><![CDATA[Software Developer]]></description><link>https://www.ioannispoulakas.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 05 Feb 2023 07:52:53 GMT</lastBuildDate><item><title><![CDATA[Node 14 - Optional chaining and nullish coalescing]]></title><link>https://www.ioannispoulakas.com/2020/10/18/node-14-optional-chaining-and-nullish-coalescing/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/10/18/node-14-optional-chaining-and-nullish-coalescing/</guid><pubDate>Sun, 18 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Node 14&lt;/h3&gt;
-&lt;p&gt;Node 14 is already released and will become the &lt;a href=&quot;https://nodejs.org/en/about/releases/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;next LTS version&lt;/a&gt; during the last week of October 2020.&lt;/p&gt;
-&lt;p&gt;Node 14 is coming with two long awaited JS features, optional chaining and nullish coalescing. Let&apos;s check them out!&lt;/p&gt;
-&lt;h3&gt;Optional chaining&lt;/h3&gt;
-&lt;p&gt;Long gone will be the days of checking for the existence of a deeply nested property using the &lt;code&gt;&amp;#x26;&amp;#x26;&lt;/code&gt; operator or &lt;a href=&quot;https://lodash.com/docs/4.17.15#get&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;lodash.get&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Ioannis Poulakas</title><description>Software Developer</description><link>https://www.ioannispoulakas.com/</link><item><title>Node 14 - Optional chaining and nullish coalescing</title><link>https://www.ioannispoulakas.com/2020/10/18/node-14-optional-chaining-and-nullish-coalescing/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2020/10/18/node-14-optional-chaining-and-nullish-coalescing/</guid><pubDate>Sun, 18 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;node-14&quot;&gt;Node 14&lt;/h3&gt;
+&lt;p&gt;Node 14 is already released and will become the &lt;a href=&quot;https://nodejs.org/en/about/releases/&quot;&gt;next LTS version&lt;/a&gt; during the last week of October 2020.&lt;/p&gt;
+&lt;p&gt;Node 14 is coming with two long awaited JS features, optional chaining and nullish coalescing. Let’s check them out!&lt;/p&gt;
+&lt;h3 id=&quot;optional-chaining&quot;&gt;Optional chaining&lt;/h3&gt;
+&lt;p&gt;Long gone will be the days of checking for the existence of a deeply nested property using the &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; operator or &lt;a href=&quot;https://lodash.com/docs/4.17.15#get&quot;&gt;lodash.get&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The optional chaining operator is &lt;code&gt;?.&lt;/code&gt; and it permits accessing any nested property in a safe way with a single expression.&lt;/p&gt;
 &lt;p&gt;Example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// Using the &amp;#x26;&amp;#x26; operator
-if (foo &amp;#x26;&amp;#x26; foo.bar &amp;#x26;&amp;#x26; foo.bar.baz) {
-  // do something with foo.bar.baz
-}
-
-// Using the ?. operator
-if (foo?.bar?.baz) {
-  // do something with foo.bar.baz
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Nullish coalescing&lt;/h3&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;// Using the &amp;amp;&amp;amp; operator&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;if (foo &amp;amp;&amp;amp; foo.bar &amp;amp;&amp;amp; foo.bar.baz) {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  // do something with foo.bar.baz&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;// Using the ?. operator&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;if (foo?.bar?.baz) {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  // do something with foo.bar.baz&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;nullish-coalescing&quot;&gt;Nullish coalescing&lt;/h3&gt;
 &lt;p&gt;The nullish coalescing logical operator is &lt;code&gt;??&lt;/code&gt; and it returns the right-hand side operand only if the left-hand side operand is &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;This sounds similar to the logical &lt;code&gt;OR (||)&lt;/code&gt; operator, however the &lt;code&gt;||&lt;/code&gt; operator returns the right-hand side operand when the left-hand side is any &lt;code&gt;falsy&lt;/code&gt; value.&lt;/p&gt;
 &lt;p&gt;Thus for many cases that a default value has to be assigned only when a value is &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt;, the nullish coalescing operator comes in handy.&lt;/p&gt;
 &lt;p&gt;Example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;const foo = 0;
-console.log(foo || 10); // 10
-console.log(foo ?? 10); // 0
-
-const bar = false;
-console.log(bar || true); // true
-console.log(bar ?? true); // false
-
-const baz = &apos;&apos;;
-console.log(baz || &apos;default&apos;); // &apos;default&apos;
-console.log(baz ?? &apos;default&apos;); // &apos;&apos;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Native ESLint support&lt;/h3&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;const foo = 0;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;console.log(foo || 10); // 10&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;console.log(foo ?? 10); // 0&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;const bar = false;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;console.log(bar || true); // true&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;console.log(bar ?? true); // false&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;const baz = &apos;&apos;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;console.log(baz || &apos;default&apos;); // &apos;default&apos;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;console.log(baz ?? &apos;default&apos;); // &apos;&apos;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;native-eslint-support&quot;&gt;Native ESLint support&lt;/h3&gt;
 &lt;p&gt;ESLint has native support for optional chaining and nullish coalescing since 7.5.0 version. However to enable the new syntax it requires the following configuration:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &quot;parserOptions&quot;: {
-    &quot;ecmaVersion&quot;: 2020
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title><![CDATA[Using the new JSX transform with latest React]]></title><link>https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</guid><pubDate>Fri, 16 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;New JSX transform&lt;/h3&gt;
-&lt;p&gt;React has recently introduced the &lt;a href=&quot;https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;new JSX transform&lt;/a&gt; version.&lt;/p&gt;
-&lt;p&gt;What&apos;s so cool about it?&lt;br&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  &quot;parserOptions&quot;: {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;    &quot;ecmaVersion&quot;: 2020&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>Using the new JSX transform with latest React</title><link>https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2020/10/16/using-the-new-jsx-transform-with-latest-react/</guid><pubDate>Fri, 16 Oct 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;new-jsx-transform&quot;&gt;New JSX transform&lt;/h3&gt;
+&lt;p&gt;React has recently introduced the &lt;a href=&quot;https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html&quot;&gt;new JSX transform&lt;/a&gt; version.&lt;/p&gt;
+&lt;p&gt;What’s so cool about it?&lt;br&gt;
 You can now use JSX on your components without importing React!&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import React from &apos;react&apos;; // no longer required!
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;import React from &apos;react&apos;; // no longer required!&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Of course if you are using hooks, or other React features, you would still need to import those.&lt;/p&gt;
 &lt;p&gt;Also depending on the project, the compiled output bundle size might be reduced.&lt;/p&gt;
-&lt;h3&gt;Supported React versions&lt;/h3&gt;
+&lt;h3 id=&quot;supported-react-versions&quot;&gt;Supported React versions&lt;/h3&gt;
 &lt;p&gt;Initially the new JSX transform has been announced for the forthcoming React 17 version. However, in a surprisingly move, React team has backported the new JSX transform to React 16.14.0, 15.7.0, and 0.14.10 versions!&lt;/p&gt;
-&lt;h3&gt;Enable the new JSX tranform with babel/preset-react&lt;/h3&gt;
+&lt;h3 id=&quot;enable-the-new-jsx-tranform-with-babelpreset-react&quot;&gt;Enable the new JSX tranform with babel/preset-react&lt;/h3&gt;
 &lt;p&gt;The new JSX transform can be enabled on babel/preset-react (v7) by simply setting the &lt;code&gt;runtime&lt;/code&gt; property to &lt;code&gt;automatic&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &quot;presets&quot;: [
-    [
-      &quot;@babel/preset-react&quot;,
-      {
-        &quot;runtime&quot;: &quot;automatic&quot;
-      }
-    ]
-  ]
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Enable the new JSX transform on Gatsby&lt;/h3&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  &quot;presets&quot;: [&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;    [&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;      &quot;@babel/preset-react&quot;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;      {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;        &quot;runtime&quot;: &quot;automatic&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;      }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;    ]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  ]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;enable-the-new-jsx-transform-on-gatsby&quot;&gt;Enable the new JSX transform on Gatsby&lt;/h3&gt;
 &lt;p&gt;Gatsby since version 2.24.5 does support the new JSX transform.&lt;br&gt;
 It can be enabled via the custom Babel configuration file by setting the &lt;code&gt;reactRuntime&lt;/code&gt; property to &lt;code&gt;automatic&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &quot;presets&quot;: [
-    [
-      &quot;babel-preset-gatsby&quot;,
-      {
-        &quot;reactRuntime&quot;: &quot;automatic&quot;,
-      }
-    ]
-  ]
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Keeping ESLint happy&lt;/h3&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  &quot;presets&quot;: [&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;    [&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;      &quot;babel-preset-gatsby&quot;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;      {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;        &quot;reactRuntime&quot;: &quot;automatic&quot;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;      }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;    ]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  ]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;keeping-eslint-happy&quot;&gt;Keeping ESLint happy&lt;/h3&gt;
 &lt;p&gt;Good old ESLint will still complain if you try to use JSX on your components without importing React, so you would just have to turn off the following rule:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&quot;react/react-in-jsx-scope&quot;: &quot;off&quot;
-&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title><![CDATA[How to speed up shell load while using NVM]]></title><link>https://www.ioannispoulakas.com/2020/02/22/how-to-speed-up-shell-load-while-using-nvm/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2020/02/22/how-to-speed-up-shell-load-while-using-nvm/</guid><pubDate>Sat, 22 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;If you are developing any application that depends on NodeJS, using &lt;a href=&quot;https://github.com/nvm-sh/nvm&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;NVM (Node Version Manager)&lt;/a&gt; is highly recommended.&lt;/p&gt;
-&lt;h3&gt;Issue&lt;/h3&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;&quot;react/react-in-jsx-scope&quot;: &quot;off&quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>How to speed up shell load while using NVM</title><link>https://www.ioannispoulakas.com/2020/02/22/how-to-speed-up-shell-load-while-using-nvm/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2020/02/22/how-to-speed-up-shell-load-while-using-nvm/</guid><pubDate>Sat, 22 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;If you are developing any application that depends on NodeJS, using &lt;a href=&quot;https://github.com/nvm-sh/nvm&quot;&gt;NVM (Node Version Manager)&lt;/a&gt; is highly recommended.&lt;/p&gt;
+&lt;h3 id=&quot;issue&quot;&gt;Issue&lt;/h3&gt;
 &lt;p&gt;The only downside of NVM is that it significantly slows down shell prompt initialization while using the default settings.&lt;/p&gt;
 &lt;p&gt;Here is how it is configured by default for bash:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Load NVM
-export NVM_DIR=~/.nvm
-[[ -s &quot;$NVM_DIR/nvm.sh&quot; ]] &amp;#x26;&amp;#x26; source &quot;$NVM_DIR/nvm.sh&quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;# Load NVM&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;export NVM_DIR=~/.nvm&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;[[ -s &quot;$NVM_DIR/nvm.sh&quot; ]] &amp;amp;&amp;amp; source &quot;$NVM_DIR/nvm.sh&quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And here is how bad it performs:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ time source ~/.bash_profile
-
-real 0m0.478s
-user 0m0.291s
-sys  0m0.198s
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;First solution, lazy load NVM&lt;/h3&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;$ time source ~/.bash_profile&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;real 0m0.478s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;user 0m0.291s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;sys  0m0.198s&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;first-solution-lazy-load-nvm&quot;&gt;First solution, lazy load NVM&lt;/h3&gt;
 &lt;p&gt;There are simple bash scripts that can lazy load NVM during the first invoke of the &lt;code&gt;nvm&lt;/code&gt; command. Of course catching &lt;code&gt;nvm&lt;/code&gt; is not enough, script should also be checking for &lt;code&gt;npm&lt;/code&gt;, &lt;code&gt;node&lt;/code&gt;, &lt;code&gt;npx&lt;/code&gt;, and any other global package that is installed. Also that very first load will be equally slow to the timings shown above.&lt;/p&gt;
 &lt;p&gt;Here is how a minimal bash script would look like for capturing the &lt;code&gt;node&lt;/code&gt; command and lazy loading NVM:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;lazy_load_nvm() {
-  unset -f node
-  export NVM_DIR=~/.nvm
-  [[ -s &quot;$NVM_DIR/nvm.sh&quot; ]] &amp;#x26;&amp;#x26; source &quot;$NVM_DIR/nvm.sh&quot;
-}
-
-node() {
-  lazy_load_nvm
-  node $@
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;lazy_load_nvm() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  unset -f node&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  export NVM_DIR=~/.nvm&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  [[ -s &quot;$NVM_DIR/nvm.sh&quot; ]] &amp;amp;&amp;amp; source &quot;$NVM_DIR/nvm.sh&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;node() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  lazy_load_nvm&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  node $@&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The &lt;code&gt;node&lt;/code&gt; function above can be replicated for capturing the other executables of choice, just remember that they should be included on the unset command as well.&lt;/p&gt;
-&lt;h3&gt;Second solution, load NVM in a much faster way&lt;/h3&gt;
+&lt;h3 id=&quot;second-solution-load-nvm-in-a-much-faster-way&quot;&gt;Second solution, load NVM in a much faster way&lt;/h3&gt;
 &lt;p&gt;NVM while loading up is checking which node version to auto-use based on &lt;code&gt;.nvmrc&lt;/code&gt; or a similar configuration file. And this exact check is the one that takes most of the time to complete.&lt;br&gt;
 Good news is that there is a flag for skipping this check.&lt;br&gt;
 However without an autoloaded node version, there should still exist a fallback to a preferred version for fast access.&lt;/p&gt;
 &lt;p&gt;Putting those two together on the bash init is as simple as:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Add default node to path
-export PATH=~/.nvm/versions/node/v12.16.1/bin:$PATH
-
-# Load NVM
-export NVM_DIR=~/.nvm
-[[ -s &quot;$NVM_DIR/nvm.sh&quot; ]] &amp;#x26;&amp;#x26; source &quot;$NVM_DIR/nvm.sh&quot; --no-use
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Let&apos;s measure the startup time:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ time source ~/.bash_profile
-
-real 0m0.051s
-user 0m0.031s
-sys	 0m0.018s
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;# Add default node to path&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;export PATH=~/.nvm/versions/node/v12.16.1/bin:$PATH&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;# Load NVM&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;export NVM_DIR=~/.nvm&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;[[ -s &quot;$NVM_DIR/nvm.sh&quot; ]] &amp;amp;&amp;amp; source &quot;$NVM_DIR/nvm.sh&quot; --no-use&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s measure the startup time:&lt;/p&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;$ time source ~/.bash_profile&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;real 0m0.051s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;user 0m0.031s&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;sys	 0m0.018s&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Boom, almost half a second faster!&lt;/p&gt;
-&lt;p&gt;If a project is using a different node version than the one declared on the bash init, then it&apos;s just a matter of remember running &lt;code&gt;nvm use&lt;/code&gt; before issuing any other node related commands.&lt;br&gt;
+&lt;p&gt;If a project is using a different node version than the one declared on the bash init, then it’s just a matter of remember running &lt;code&gt;nvm use&lt;/code&gt; before issuing any other node related commands.&lt;br&gt;
 Updating the default version via NVM, would also require updating manually the version on bash init.&lt;/p&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;I personally prefer the second solution, as I am usually working with the latest LTS node version on active projects. Thus I rarely have to invoke &lt;code&gt;nvm use&lt;/code&gt; manually. Time saved overall from spawning shell instances definitely worths it.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to manage your Python dependencies with Poetry]]></title><link>https://www.ioannispoulakas.com/2019/12/26/manage-your-python-dependencies-with-poetry/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2019/12/26/manage-your-python-dependencies-with-poetry/</guid><pubDate>Thu, 26 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In the recent past I was excited blogging about &lt;a href=&quot;/2018/01/28/manage-your-python-dependencies-with-pipenv/&quot;&gt;Pipenv&lt;/a&gt;.&lt;br&gt;
-Today I decided to try out &lt;a href=&quot;https://python-poetry.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Poetry&lt;/a&gt; since it reached version 1.0 this month and there is a lot of hype around it.&lt;/p&gt;
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;I personally prefer the second solution, as I am usually working with the latest LTS node version on active projects. Thus I rarely have to invoke &lt;code&gt;nvm use&lt;/code&gt; manually. Time saved overall from spawning shell instances definitely worths it.&lt;/p&gt;
+</content:encoded></item><item><title>How to manage your Python dependencies with Poetry</title><link>https://www.ioannispoulakas.com/2019/12/26/manage-your-python-dependencies-with-poetry/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2019/12/26/manage-your-python-dependencies-with-poetry/</guid><pubDate>Thu, 26 Dec 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In the recent past I was excited blogging about &lt;a href=&quot;/2018/01/28/manage-your-python-dependencies-with-pipenv/&quot;&gt;Pipenv&lt;/a&gt;.&lt;br&gt;
+Today I decided to try out &lt;a href=&quot;https://python-poetry.org/&quot;&gt;Poetry&lt;/a&gt; since it reached version 1.0 this month and there is a lot of hype around it.&lt;/p&gt;
 &lt;p&gt;Poetry is a tool for managing Python dependencies as well as virtual environments.&lt;/p&gt;
-&lt;h3&gt;Getting started&lt;/h3&gt;
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 &lt;p&gt;Poetry can be installed by running:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Installation will add Poetry on the home directory and make it automatically available on bash:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export PATH=&quot;$HOME/.poetry/bin:$PATH&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Installing Python dependencies&lt;/h3&gt;
-&lt;p&gt;Poetry is using the standardized file format &lt;a href=&quot;https://www.python.org/dev/peps/pep-0518/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;pyproject.toml&lt;/a&gt;.&lt;br&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;export PATH=&quot;$HOME/.poetry/bin:$PATH&quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;installing-python-dependencies&quot;&gt;Installing Python dependencies&lt;/h3&gt;
+&lt;p&gt;Poetry is using the standardized file format &lt;a href=&quot;https://www.python.org/dev/peps/pep-0518/&quot;&gt;pyproject.toml&lt;/a&gt;.&lt;br&gt;
 The &lt;code&gt;pyproject.toml&lt;/code&gt; file can be created by simply running &lt;code&gt;poetry init&lt;/code&gt; and following the on-screen instructions.&lt;/p&gt;
-&lt;p&gt;With the &lt;code&gt;pyproject.toml&lt;/code&gt; file in place, let&apos;s try to install the popular library &lt;code&gt;requests&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;poetry add requests
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With the &lt;code&gt;pyproject.toml&lt;/code&gt; file in place, let’s try to install the popular library &lt;code&gt;requests&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;poetry add requests&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Poetry will automagically:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Create a new virtualenv if it doesn&apos;t already exist&lt;/li&gt;
+&lt;li&gt;Create a new virtualenv if it doesn’t already exist&lt;/li&gt;
 &lt;li&gt;Install &lt;code&gt;requests&lt;/code&gt; on the virtualenv&lt;/li&gt;
 &lt;li&gt;Update &lt;code&gt;pyproject.toml&lt;/code&gt; with the &lt;code&gt;requests&lt;/code&gt; entry&lt;/li&gt;
 &lt;li&gt;Create or update &lt;code&gt;poetry.lock&lt;/code&gt; that holds the dependency tree.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Note: make sure both &lt;code&gt;pyproject.toml&lt;/code&gt; and &lt;code&gt;poetry.lock&lt;/code&gt; are under version control.&lt;/p&gt;
 &lt;p&gt;Dev dependencies can be installed by using the &lt;code&gt;--dev&lt;/code&gt; flag, for example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;poetry add nose --dev
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Uninstalling Python dependencies&lt;/h3&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;poetry add nose --dev&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;uninstalling-python-dependencies&quot;&gt;Uninstalling Python dependencies&lt;/h3&gt;
 &lt;p&gt;Poetry can uninstall a dependency by running:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;poetry remove requests
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Running commands on the virtualenv&lt;/h3&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;poetry remove requests&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;running-commands-on-the-virtualenv&quot;&gt;Running commands on the virtualenv&lt;/h3&gt;
 &lt;p&gt;Any command can be run on the created virtualenv by using &lt;code&gt;poetry run&lt;/code&gt;, for example:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;poetry run python --version
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;poetry run python --version&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Alternatively a shell can be spawned by running &lt;code&gt;poetry shell&lt;/code&gt; to avoid prefixing every command.&lt;/p&gt;
-&lt;h3&gt;Managing Python virtual environments for a project&lt;/h3&gt;
-&lt;p&gt;Let&apos;s suppose that a project has to be run specifically on Python version 3.7.5.
+&lt;h3 id=&quot;managing-python-virtual-environments-for-a-project&quot;&gt;Managing Python virtual environments for a project&lt;/h3&gt;
+&lt;p&gt;Let’s suppose that a project has to be run specifically on Python version 3.7.5.
 Poetry can make use of pyenv environments or even python executables that are available on the path.&lt;/p&gt;
 &lt;p&gt;Using &lt;code&gt;pyenv&lt;/code&gt; to get Python 3.7.5:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pyenv install 3.7.5
-pyenv local 3.7.5
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;pyenv install 3.7.5&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;pyenv local 3.7.5&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Update Python version at &lt;code&gt;pyproject.toml&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[tool.poetry.dependencies]
-python = &quot;^3.7.5&quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;[tool.poetry.dependencies]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;python = &quot;^3.7.5&quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Re-install dependencies for Python 3.7.5:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;poetry install
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;poetry install&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;List all existing virtual environments for a project:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;poetry env list
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;poetry env list&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Switch a virtual environment:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;poetry env use &amp;#x3C;env-name&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;poetry env use &amp;lt;env-name&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Remove a virtual environment:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;poetry env remove &amp;#x3C;env-name&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Other useful Poetry functionalities&lt;/h3&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;poetry env remove &amp;lt;env-name&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;other-useful-poetry-functionalities&quot;&gt;Other useful Poetry functionalities&lt;/h3&gt;
 &lt;p&gt;Poetry can &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;publish&lt;/code&gt; packages using the respective commands, something that is missing from Pipenv.&lt;br&gt;
 Poetry lock file can be exported to other formats like &lt;code&gt;requirements.txt&lt;/code&gt; by using the &lt;code&gt;export&lt;/code&gt; command.&lt;br&gt;
 Poetry can display package info by using the &lt;code&gt;search&lt;/code&gt; command.&lt;/p&gt;
-&lt;h3&gt;Docker&lt;/h3&gt;
+&lt;h3 id=&quot;docker&quot;&gt;Docker&lt;/h3&gt;
 &lt;p&gt;Deploying dependencies on Docker containers should not require installing them under a virtualenv.&lt;br&gt;
 Poetry is providing a handy command for disabling the default behaviour:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;RUN poetry config virtualenvs.create false \
-  &amp;#x26;&amp;#x26; poetry install --no-dev --no-interaction --no-ansi
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;Poetry is an awesome tool, it builds upon previous Pipenv features while at the same time is simplifying the virtual environments handling. Since version 1.0 is out it can be considered pretty stable and ready for production.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Migrating from Jekyll to Gatsby]]></title><link>https://www.ioannispoulakas.com/2019/08/30/migrating-from-jekyll-to-gatsby/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2019/08/30/migrating-from-jekyll-to-gatsby/</guid><pubDate>Fri, 30 Aug 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I have been following &lt;a href=&quot;https://gatsbyjs.org&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Gatsby&lt;/a&gt; for quite some time now, and I finally decided to give it a try on my personal website/blog! This post describes the journey of migrating from Jekyll to Gatsby.&lt;/p&gt;
-&lt;h2&gt;Why Gatsby&lt;/h2&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;RUN poetry config virtualenvs.create false \&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;  &amp;amp;&amp;amp; poetry install --no-dev --no-interaction --no-ansi&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Poetry is an awesome tool, it builds upon previous Pipenv features while at the same time is simplifying the virtual environments handling. Since version 1.0 is out it can be considered pretty stable and ready for production.&lt;/p&gt;
+</content:encoded></item><item><title>Migrating from Jekyll to Gatsby</title><link>https://www.ioannispoulakas.com/2019/08/30/migrating-from-jekyll-to-gatsby/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2019/08/30/migrating-from-jekyll-to-gatsby/</guid><pubDate>Fri, 30 Aug 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I have been following &lt;a href=&quot;https://gatsbyjs.org&quot;&gt;Gatsby&lt;/a&gt; for quite some time now, and I finally decided to give it a try on my personal website/blog! This post describes the journey of migrating from Jekyll to Gatsby.&lt;/p&gt;
+&lt;h2 id=&quot;why-gatsby&quot;&gt;Why Gatsby&lt;/h2&gt;
 &lt;p&gt;Gatsby is an awesome open source framework for building blazing fast static websites and apps. What I find most intriguing about Gatsby is that it is powered by technologies that I use on my everyday dev life: JS, React and GraphQL.&lt;/p&gt;
 &lt;p&gt;Gatsby is also backed by a vibrant community, providing open source plugins that aid on accomplishing common tasks in an easy manner.&lt;/p&gt;
-&lt;h2&gt;Migration planning&lt;/h2&gt;
+&lt;h2 id=&quot;migration-planning&quot;&gt;Migration planning&lt;/h2&gt;
 &lt;p&gt;My plan for the Jekyll to Gatsby migration was pretty straight-forward, keep
 the content markdown structure, as well as preserve the CSS layout.&lt;/p&gt;
 &lt;p&gt;Gatsby shines on both aspects:&lt;/p&gt;
@@ -217,53 +196,54 @@ the content markdown structure, as well as preserve the CSS layout.&lt;/p&gt;
 &lt;p&gt;Thus the main migration challenge was setting up Gatsby, and migrating the layout from the Jekyll template format to JSX.&lt;/p&gt;
 &lt;p&gt;Gatsby offers various project starter templates, and I have selected the most minimal one, which fits my principal of learning a new framework by building a new project from scratch.&lt;/p&gt;
 &lt;p&gt;My WordPress/Jekyll background has also driven me to separate content into two main categories, pages and blog posts, with different templates.&lt;/p&gt;
-&lt;h3&gt;Steps and resources for setting up Gatsby&lt;/h3&gt;
-&lt;p&gt;Gatsby developers provide excellent &lt;a href=&quot;https://www.gatsbyjs.org/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;documentation&lt;/a&gt; for getting started, so I am not going to list detailed steps for installing and using the gatsby-cli.&lt;/p&gt;
+&lt;h3 id=&quot;steps-and-resources-for-setting-up-gatsby&quot;&gt;Steps and resources for setting up Gatsby&lt;/h3&gt;
+&lt;p&gt;Gatsby developers provide excellent &lt;a href=&quot;https://www.gatsbyjs.org/docs/&quot;&gt;documentation&lt;/a&gt; for getting started, so I am not going to list detailed steps for installing and using the gatsby-cli.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Create a new Gatsby project using the &lt;a href=&quot;https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-default/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;gatsby-starter-default&lt;/a&gt; template.&lt;/li&gt;
+&lt;li&gt;Create a new Gatsby project using the &lt;a href=&quot;https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-default/&quot;&gt;gatsby-starter-default&lt;/a&gt; template.&lt;/li&gt;
 &lt;li&gt;Setup &lt;code&gt;siteMetadata&lt;/code&gt; and &lt;code&gt;gatsby-plugin-manifest&lt;/code&gt; data on &lt;code&gt;gatsby-config&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Customize the React components to achieve the desired site layout.&lt;/li&gt;
-&lt;li&gt;Setup &lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-source-filesystem/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;gatsby-source-filesystem&lt;/a&gt; for markdown content.&lt;/li&gt;
+&lt;li&gt;Setup &lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-source-filesystem/&quot;&gt;gatsby-source-filesystem&lt;/a&gt; for markdown content.&lt;/li&gt;
 &lt;li&gt;Setup page/post markdown meta. I am using the following variables: template (page or post), path, title, date (for posts only).&lt;/li&gt;
-&lt;li&gt;Study documentation, &lt;a href=&quot;https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;gatsby-starter-blog&lt;/a&gt; and &lt;a href=&quot;https://www.gatsbyjs.org/starters/alxshelepenok/gatsby-starter-lumen/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;gatsby-starter-lumen&lt;/a&gt; starters on how to implement page/post templates, as well as posts pagination. Apply related concepts on &lt;code&gt;gatsby-node&lt;/code&gt; file and create templates.&lt;/li&gt;
+&lt;li&gt;Study documentation, &lt;a href=&quot;https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/&quot;&gt;gatsby-starter-blog&lt;/a&gt; and &lt;a href=&quot;https://www.gatsbyjs.org/starters/alxshelepenok/gatsby-starter-lumen/&quot;&gt;gatsby-starter-lumen&lt;/a&gt; starters on how to implement page/post templates, as well as posts pagination. Apply related concepts on &lt;code&gt;gatsby-node&lt;/code&gt; file and create templates.&lt;/li&gt;
 &lt;li&gt;Add custom 404 page.&lt;/li&gt;
 &lt;li&gt;Setup HTML title, meta per content template, using &lt;code&gt;react-helmet&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Add &lt;code&gt;favicon.ico&lt;/code&gt; on the &lt;code&gt;static&lt;/code&gt; Gatsby folder.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Essential Gatsby plugins&lt;/h3&gt;
+&lt;h3 id=&quot;essential-gatsby-plugins&quot;&gt;Essential Gatsby plugins&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-feed/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;gatsby-plugin-feed&lt;/a&gt;: Add an RSS feed.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;gatsby-plugin-sitemap&lt;/a&gt;: Add an XML sitemap.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;gatsby-plugin-google-analytics&lt;/a&gt;: Add Google Analytics support. Tracking code only runs in production mode, which is great as local development won&apos;t ruin stats.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-external-links/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;gatsby-remark-external-links&lt;/a&gt;: Customize markdown links, allow opening the target url in a new window/tab.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-feed/&quot;&gt;gatsby-plugin-feed&lt;/a&gt;: Add an RSS feed.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/&quot;&gt;gatsby-plugin-sitemap&lt;/a&gt;: Add an XML sitemap.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/&quot;&gt;gatsby-plugin-google-analytics&lt;/a&gt;: Add Google Analytics support. Tracking code only runs in production mode, which is great as local development won’t ruin stats.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-remark-external-links/&quot;&gt;gatsby-remark-external-links&lt;/a&gt;: Customize markdown links, allow opening the target url in a new window/tab.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Optionally customize Prettier, ESLint, Babel configurations&lt;/h3&gt;
+&lt;h3 id=&quot;optionally-customize-prettier-eslint-babel-configurations&quot;&gt;Optionally customize Prettier, ESLint, Babel configurations&lt;/h3&gt;
 &lt;p&gt;Default configurations are pretty sane, but they can be customized to fit your personal preference.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Prettier: Customize &lt;code&gt;.prettierrc&lt;/code&gt; and &lt;code&gt;.prettierignore&lt;/code&gt; files.&lt;/li&gt;
-&lt;li&gt;ESLint: Use &lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-eslint/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;gatsby-plugin-eslint&lt;/a&gt; and a custom &lt;code&gt;.eslintrc&lt;/code&gt; to configure your ESLint setup. I prefer &lt;code&gt;eslint-config-airbnb&lt;/code&gt; and a tight eslint/prettier configuration, failing compilation on errors.&lt;/li&gt;
-&lt;li&gt;Babel: Add a custom &lt;code&gt;.babelrc&lt;/code&gt; file that extends from &lt;a href=&quot;https://www.npmjs.com/package/babel-preset-gatsby&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;babel-preset-gatsby&lt;/a&gt;. For example you can add optional-chaining support or any other Babel plugin.&lt;/li&gt;
+&lt;li&gt;ESLint: Use &lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-plugin-eslint/&quot;&gt;gatsby-plugin-eslint&lt;/a&gt; and a custom &lt;code&gt;.eslintrc&lt;/code&gt; to configure your ESLint setup. I prefer &lt;code&gt;eslint-config-airbnb&lt;/code&gt; and a tight eslint/prettier configuration, failing compilation on errors.&lt;/li&gt;
+&lt;li&gt;Babel: Add a custom &lt;code&gt;.babelrc&lt;/code&gt; file that extends from &lt;a href=&quot;https://www.npmjs.com/package/babel-preset-gatsby&quot;&gt;babel-preset-gatsby&lt;/a&gt;. For example you can add optional-chaining support or any other Babel plugin.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Deploying to GitHub Pages using a custom domain&lt;/h3&gt;
+&lt;h3 id=&quot;deploying-to-github-pages-using-a-custom-domain&quot;&gt;Deploying to GitHub Pages using a custom domain&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Add the CNAME file both on repo root and on the &lt;code&gt;static&lt;/code&gt; Gatsby folder so that it can get deployed to the special &lt;code&gt;gh-pages&lt;/code&gt; branch.&lt;/li&gt;
 &lt;li&gt;Install &lt;code&gt;gh-pages&lt;/code&gt; from npm.&lt;/li&gt;
 &lt;li&gt;Add a &lt;code&gt;deploy&lt;/code&gt; command on &lt;code&gt;package.json&lt;/code&gt; as follows:&lt;br&gt;
-&lt;code&gt;gatsby build &amp;#x26;&amp;#x26; gh-pages -d public&lt;/code&gt;&lt;/li&gt;
+&lt;code&gt;gatsby build &amp;amp;&amp;amp; gh-pages -d public&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Setup GitHub Pages on repository settings to be deploying from the &lt;code&gt;gh-pages&lt;/code&gt; branch. Keep the &lt;code&gt;master&lt;/code&gt; branch clean, for source code purposes only.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;npm run deploy&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gatsby pitfalls&lt;/h3&gt;
-&lt;p&gt;I didn&apos;t come across any major pitfall, other than the slight annoyance of sometimes having to clear the &lt;code&gt;.cache&lt;/code&gt; folder and restart the development server.&lt;/p&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;h3 id=&quot;gatsby-pitfalls&quot;&gt;Gatsby pitfalls&lt;/h3&gt;
+&lt;p&gt;I didn’t come across any major pitfall, other than the slight annoyance of sometimes having to clear the &lt;code&gt;.cache&lt;/code&gt; folder and restart the development server.&lt;/p&gt;
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;I really enjoyed the process of migrating to Gatsby. Step-by-step building the website from scratch, selecting the appropriate plugins, customizing code. Everything falling within the NodeJS and React ecosystem.&lt;br&gt;
 Overall I would highly recommend Gatsby, and of course I am looking forward to using it again on new projects.&lt;br&gt;
-Feel free to browse the updated &lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;source code&lt;/a&gt; and get inspired.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to install Bash 5.0 on macOS]]></title><link>https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/</guid><pubDate>Sun, 10 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3&gt;Introduction&lt;/h3&gt;
+Feel free to browse the updated &lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com&quot;&gt;source code&lt;/a&gt; and get inspired.&lt;/p&gt;
+</content:encoded></item><item><title>How to install Bash 5.0 on macOS</title><link>https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/</guid><pubDate>Sun, 10 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;Bash 5.0 has been released during the first week of January 2019.&lt;br&gt;
 It builds upon Bash 4.4.x, fixes bugs, and introduces new features and improvements.&lt;br&gt;
-You can find extended info at the official &lt;a href=&quot;http://lists.gnu.org/archive/html/bug-bash/2019-01/msg00063.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;release notes&lt;/a&gt;.&lt;br&gt;
+You can find extended info at the official &lt;a href=&quot;http://lists.gnu.org/archive/html/bug-bash/2019-01/msg00063.html&quot;&gt;release notes&lt;/a&gt;.&lt;br&gt;
 Although macOS is bundling Bash, it is using the older 3.x version most probably due to the Bash licensing changes. Since the Bash 4.x release, license has been changed from GPLv2 to GPLv3.&lt;/p&gt;
-&lt;h3&gt;How to install Bash 5.0 (or latest bash) on macOS&lt;/h3&gt;
+&lt;h3 id=&quot;how-to-install-bash-50-or-latest-bash-on-macos&quot;&gt;How to install Bash 5.0 (or latest bash) on macOS&lt;/h3&gt;
 &lt;p&gt;As usual, &lt;code&gt;brew&lt;/code&gt; comes to the rescue, so installation is quite simple:&lt;br&gt;
 &lt;code&gt;brew install bash&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;There are two more steps to activate Bash 5.0.&lt;/p&gt;
@@ -274,23 +254,23 @@ and add a new entry/line with the path:&lt;br&gt;
 &lt;p&gt;Make Bash 5.0 default on macOS:&lt;br&gt;
 &lt;code&gt;chsh -s /usr/local/bin/bash&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Check &lt;code&gt;bash --version&lt;/code&gt; to verify that the new version is successfully activated.&lt;/p&gt;
-&lt;h3&gt;Bonus: install bash-completion&lt;/h3&gt;
+&lt;h3 id=&quot;bonus-install-bash-completion&quot;&gt;Bonus: install bash-completion&lt;/h3&gt;
 &lt;p&gt;Various CLI apps support improved autocomplete via bash-completion scripts.&lt;/p&gt;
 &lt;p&gt;Install bash-completion on macOS:&lt;br&gt;
 &lt;code&gt;brew install bash-completion@2&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Initialize bash-completion@2 on &lt;code&gt;~/.bash_profile&lt;/code&gt; with backwards compatibility:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export BASH_COMPLETION_COMPAT_DIR=&quot;/usr/local/etc/bash_completion.d&quot;
-[[ -r &quot;/usr/local/etc/profile.d/bash_completion.sh&quot; ]] &amp;#x26;&amp;#x26; . &quot;/usr/local/etc/profile.d/bash_completion.sh&quot;
-&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title><![CDATA[How to manage your Python dependencies with Pipenv]]></title><link>https://www.ioannispoulakas.com/2018/01/28/manage-your-python-dependencies-with-pipenv/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2018/01/28/manage-your-python-dependencies-with-pipenv/</guid><pubDate>Sun, 28 Jan 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Python developers rejoice!&lt;br&gt;
-&lt;a href=&quot;http://pipenv.readthedocs.io/en/latest/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Pipenv&lt;/a&gt; is a dependency manager for Python projects.&lt;br&gt;
+&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;export BASH_COMPLETION_COMPAT_DIR=&quot;/usr/local/etc/bash_completion.d&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;[[ -r &quot;/usr/local/etc/profile.d/bash_completion.sh&quot; ]] &amp;amp;&amp;amp; . &quot;/usr/local/etc/profile.d/bash_completion.sh&quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>How to manage your Python dependencies with Pipenv</title><link>https://www.ioannispoulakas.com/2018/01/28/manage-your-python-dependencies-with-pipenv/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2018/01/28/manage-your-python-dependencies-with-pipenv/</guid><pubDate>Sun, 28 Jan 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Python developers rejoice!&lt;br&gt;
+&lt;a href=&quot;http://pipenv.readthedocs.io/en/latest/&quot;&gt;Pipenv&lt;/a&gt; is a dependency manager for Python projects.&lt;br&gt;
 It works similarly to other popular dependency managers, like npm for NodeJS, or bundler for Ruby.&lt;br&gt;
 Pipenv combines and streamlines the use of &lt;code&gt;pip&lt;/code&gt; and &lt;code&gt;virtualenv&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Getting started&lt;/h3&gt;
+&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
 &lt;p&gt;Pipenv can be installed via pip:&lt;br&gt;
 &lt;code&gt;pip install --user pipenv&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;If on macOS, I&apos;d recommend installing Pipenv via brew:&lt;br&gt;
+&lt;p&gt;If on macOS, I’d recommend installing Pipenv via brew:&lt;br&gt;
 &lt;code&gt;brew install pipenv&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Initialize a pipenv environment for any Python project&lt;/h3&gt;
+&lt;h3 id=&quot;initialize-a-pipenv-environment-for-any-python-project&quot;&gt;Initialize a pipenv environment for any Python project&lt;/h3&gt;
 &lt;p&gt;Initialize a Pipenv environment with Python 2.x:&lt;br&gt;
 &lt;code&gt;pipenv --two&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Initialize a Pipenv environment with Python 3.x:&lt;br&gt;
@@ -298,8 +278,8 @@ Pipenv combines and streamlines the use of &lt;code&gt;pip&lt;/code&gt; and &lt;
 &lt;p&gt;Notice that a new file will be created named &lt;code&gt;Pipfile&lt;/code&gt;.&lt;br&gt;
 This file is similar to a &lt;code&gt;Gemfile&lt;/code&gt; or &lt;code&gt;package.json&lt;/code&gt; on Ruby and NodeJS respectively.
 &lt;code&gt;Pipfile&lt;/code&gt; lists all top level dependencies grouped into &lt;code&gt;packages&lt;/code&gt; and &lt;code&gt;dev-packages&lt;/code&gt;.&lt;/p&gt;
-&lt;h3&gt;Installing Python dependencies&lt;/h3&gt;
-&lt;p&gt;Let&apos;s suppose that the popular library &lt;code&gt;requests&lt;/code&gt; is a requirement.&lt;/p&gt;
+&lt;h3 id=&quot;installing-python-dependencies&quot;&gt;Installing Python dependencies&lt;/h3&gt;
+&lt;p&gt;Let’s suppose that the popular library &lt;code&gt;requests&lt;/code&gt; is a requirement.&lt;/p&gt;
 &lt;p&gt;Install the latest &lt;code&gt;requests&lt;/code&gt; version:&lt;br&gt;
 &lt;code&gt;pipenv install requests&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;or install a specific &lt;code&gt;requests&lt;/code&gt; version:&lt;br&gt;
@@ -310,99 +290,101 @@ This file is similar to a &lt;code&gt;Gemfile&lt;/code&gt; or &lt;code&gt;packag
 In addition to the &lt;code&gt;Pipfile&lt;/code&gt;, a new file named &lt;code&gt;Pipfile.lock&lt;/code&gt; will be created.&lt;br&gt;
 This file is similar to &lt;code&gt;Gemfile.lock&lt;/code&gt; or &lt;code&gt;package-lock.json&lt;/code&gt; on Ruby and NodeJS respectively.&lt;br&gt;
 &lt;code&gt;Pipfile.lock&lt;/code&gt; lists all top level dependencies as well as any sub-dependencies.&lt;/p&gt;
-&lt;p&gt;It&apos;s very important to commit and keep both &lt;code&gt;Pipfile&lt;/code&gt; and &lt;code&gt;Pipfile.lock&lt;/code&gt; files under version control, as these will be used to re-create the virtualenv by fellow contributors or via a deployment script etc.&lt;/p&gt;
-&lt;h3&gt;Displaying Python dependencies&lt;/h3&gt;
+&lt;p&gt;It’s very important to commit and keep both &lt;code&gt;Pipfile&lt;/code&gt; and &lt;code&gt;Pipfile.lock&lt;/code&gt; files under version control, as these will be used to re-create the virtualenv by fellow contributors or via a deployment script etc.&lt;/p&gt;
+&lt;h3 id=&quot;displaying-python-dependencies&quot;&gt;Displaying Python dependencies&lt;/h3&gt;
 &lt;p&gt;Apart from inspecting &lt;code&gt;Pipfile&lt;/code&gt; and &lt;code&gt;Pipfile.lock&lt;/code&gt; files, there is a handy Pipenv feature:&lt;br&gt;
 &lt;code&gt;pipenv graph&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Running Python commands&lt;/h3&gt;
+&lt;h3 id=&quot;running-python-commands&quot;&gt;Running Python commands&lt;/h3&gt;
 &lt;p&gt;The only downside of Pipenv, is that all Python commands need to be prefixed by &lt;code&gt;pipenv run&lt;/code&gt;, for example:&lt;br&gt;
 &lt;code&gt;pipenv run python --version&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;or&lt;br&gt;
 &lt;code&gt;pipenv run python app.py&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Virtualenv shell shortcut&lt;/h3&gt;
+&lt;h3 id=&quot;virtualenv-shell-shortcut&quot;&gt;Virtualenv shell shortcut&lt;/h3&gt;
 &lt;p&gt;Pipenv has a nice little feature that spawns a bash shell within the virtualenv:&lt;br&gt;
 &lt;code&gt;pipenv shell&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Running &lt;code&gt;python&lt;/code&gt; on the spawned bash shell, will start a Python shell within the virtualenv.&lt;br&gt;
 If for example &lt;code&gt;requests&lt;/code&gt; package was installed, &lt;code&gt;import requests&lt;/code&gt; will just work.&lt;/p&gt;
-&lt;h3&gt;Uninstalling Python dependencies&lt;/h3&gt;
+&lt;h3 id=&quot;uninstalling-python-dependencies&quot;&gt;Uninstalling Python dependencies&lt;/h3&gt;
 &lt;p&gt;Uninstall a specific package:&lt;br&gt;
 &lt;code&gt;pipenv uninstall requests&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;or uninstall all packages:&lt;br&gt;
 &lt;code&gt;pipenv uninstall --all&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Remove a Pipenv virtualenv&lt;/h3&gt;
+&lt;h3 id=&quot;remove-a-pipenv-virtualenv&quot;&gt;Remove a Pipenv virtualenv&lt;/h3&gt;
 &lt;p&gt;Clean up a virtualenv:&lt;br&gt;
 &lt;code&gt;pipenv --rm&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Re-create a Pipenv virtualenv from Pipfile/Pipfile.lock&lt;/h3&gt;
+&lt;h3 id=&quot;re-create-a-pipenv-virtualenv-from-pipfilepipfilelock&quot;&gt;Re-create a Pipenv virtualenv from Pipfile/Pipfile.lock&lt;/h3&gt;
 &lt;p&gt;Create a Pipenv virtualenv and install all dependencies is as simple as:&lt;br&gt;
 &lt;code&gt;pipenv install&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Is pyenv still relevant?&lt;/h3&gt;
+&lt;h3 id=&quot;is-pyenv-still-relevant&quot;&gt;Is pyenv still relevant?&lt;/h3&gt;
 &lt;p&gt;Pipenv is just a dependency manager, &lt;code&gt;pyenv&lt;/code&gt; is still relevant for managing different Python versions.&lt;br&gt;
 Moreover Pipenv supports installing Python versions with &lt;code&gt;pyenv&lt;/code&gt; when needed.&lt;/p&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;Pipenv is a great tool, something that was really missing from the Python ecosystem. I am already using it in production, and I highly recommend it.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My Visual Studio Code setup]]></title><link>https://www.ioannispoulakas.com/2017/10/22/my-vs-code-setup/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2017/10/22/my-vs-code-setup/</guid><pubDate>Sun, 22 Oct 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;A few months ago I have been blogging about &lt;a href=&quot;/2017/01/15/my-atom-setup/&quot;&gt;My Atom setup&lt;/a&gt;.&lt;br&gt;
-I have always kept an eye on the progress of &lt;a href=&quot;https://code.visualstudio.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Visual Studio Code&lt;/a&gt; though, having it installed, checking new features and extensions.&lt;/p&gt;
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Pipenv is a great tool, something that was really missing from the Python ecosystem. I am already using it in production, and I highly recommend it.&lt;/p&gt;
+</content:encoded></item><item><title>My Visual Studio Code setup</title><link>https://www.ioannispoulakas.com/2017/10/22/my-vs-code-setup/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2017/10/22/my-vs-code-setup/</guid><pubDate>Sun, 22 Oct 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;A few months ago I have been blogging about &lt;a href=&quot;/2017/01/15/my-atom-setup/&quot;&gt;My Atom setup&lt;/a&gt;.&lt;br&gt;
+I have always kept an eye on the progress of &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt; though, having it installed, checking new features and extensions.&lt;/p&gt;
 &lt;p&gt;Last month, after quite some dissapointments with Atom (like broken expand/collapse, split screen issues due to minimap), I decided to give VS Code a better chance, and code with it on my current projects.&lt;/p&gt;
 &lt;p&gt;During the first couple of days I had to get used to doing some things differently (like search results on the sidebar), customize user preferences here and there, as well as find suitable extensions.&lt;/p&gt;
-&lt;p&gt;Well, I got to admit that the result was totally worth the effort, as I have been feeling a lot more productive while coding on VS Code. And it&apos;s not just the blazing fast performance of the editor, there are little features everywhere that contribute to the overall great experience. I will try to list as many of them as I can think of.&lt;/p&gt;
+&lt;p&gt;Well, I got to admit that the result was totally worth the effort, as I have been feeling a lot more productive while coding on VS Code. And it’s not just the blazing fast performance of the editor, there are little features everywhere that contribute to the overall great experience. I will try to list as many of them as I can think of.&lt;/p&gt;
 &lt;p&gt;Here is my VS Code setup:&lt;/p&gt;
-&lt;h2&gt;Theme&lt;/h2&gt;
-&lt;p&gt;Color Theme: &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;One Dark Pro&lt;/a&gt;&lt;br&gt;
-File Icon Theme: &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Material Icon Theme&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Keyboard Shortcuts&lt;/h2&gt;
-&lt;p&gt;I am using the official &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Atom Keymap extension&lt;/a&gt;.&lt;br&gt;
+&lt;h2 id=&quot;theme&quot;&gt;Theme&lt;/h2&gt;
+&lt;p&gt;Color Theme: &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme&quot;&gt;One Dark Pro&lt;/a&gt;&lt;br&gt;
+File Icon Theme: &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme&quot;&gt;Material Icon Theme&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;keyboard-shortcuts&quot;&gt;Keyboard Shortcuts&lt;/h2&gt;
+&lt;p&gt;I am using the official &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings&quot;&gt;Atom Keymap extension&lt;/a&gt;.&lt;br&gt;
 VS Code team has done a great job providing extensions for both Atom and Sublime so that developers can get productive without having to learn yet another new set of shortcuts.&lt;/p&gt;
-&lt;h2&gt;Packages&lt;/h2&gt;
-&lt;h3&gt;The Essential&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;EditorConfig for VS Code&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;packages&quot;&gt;Packages&lt;/h2&gt;
+&lt;h3 id=&quot;the-essential&quot;&gt;The Essential&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig&quot;&gt;EditorConfig for VS Code&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Editorconfig helps developers to maintain consistent coding styles between different editors and platforms.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Open in GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github&quot;&gt;Open in GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Provides commands to quickly open the current file on GitHub (History / Blame / File views).&lt;br&gt;
-You may also want to check &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Git Lens&lt;/a&gt; for in-editor views.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Docker&lt;/a&gt;&lt;/p&gt;
+You may also want to check &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens&quot;&gt;Git Lens&lt;/a&gt; for in-editor views.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker&quot;&gt;Docker&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Everything you need if you are working with Docker on your repos.&lt;/p&gt;
-&lt;h3&gt;JavaScript&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;ESLint&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Integrates &lt;a href=&quot;https://eslint.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;ESLint&lt;/a&gt; into VS Code.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;jshint&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Integrates &lt;a href=&quot;http://jshint.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;JSHint&lt;/a&gt; into VS Code.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Debugger for Chrome&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;javascript&quot;&gt;JavaScript&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint&quot;&gt;ESLint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Integrates &lt;a href=&quot;https://eslint.org/&quot;&gt;ESLint&lt;/a&gt; into VS Code.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=dbaeumer.jshint&quot;&gt;jshint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Integrates &lt;a href=&quot;http://jshint.com/&quot;&gt;JSHint&lt;/a&gt; into VS Code.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome&quot;&gt;Debugger for Chrome&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Debug your JS code in the Google Chrome browser, using breakpoints, watches and more.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=joelday.docthis&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Document This&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=joelday.docthis&quot;&gt;Document This&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;An extension that helps you autogenerate and write JS code documentation.&lt;/p&gt;
-&lt;h3&gt;Python&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=donjayamanne.python&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Python&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;python&quot;&gt;Python&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=donjayamanne.python&quot;&gt;Python&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;An awesome Python extension providing linting (using Pylint, pep8 or other linters), intellisense, debugging support and more.&lt;/p&gt;
-&lt;h3&gt;Ruby&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Ruby&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;ruby&quot;&gt;Ruby&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby&quot;&gt;Ruby&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;A Ruby extension that provides linting, debugging support and more.&lt;/p&gt;
-&lt;h3&gt;CSS&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;StyleLint&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Lint CSS files using &lt;a href=&quot;https://stylelint.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;stylelint&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;Other&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Sort lines&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;css&quot;&gt;CSS&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint&quot;&gt;StyleLint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Lint CSS files using &lt;a href=&quot;https://stylelint.io/&quot;&gt;stylelint&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;other&quot;&gt;Other&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines&quot;&gt;Sort lines&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;A simple extension for sorting lines with multiple options.&lt;/p&gt;
-&lt;h3&gt;Settings (User Preferences)&lt;/h3&gt;
+&lt;h3 id=&quot;settings-user-preferences&quot;&gt;Settings (User Preferences)&lt;/h3&gt;
 &lt;p&gt;Initially I was thinking about listing my own settings, however since they are highly opinionated, I will advise you to go through preferences/settings and customize them according to your needs. They are intuitively separated into sections, there is documentation and a quick search.&lt;/p&gt;
-&lt;h2&gt;Things I love on VS Code&lt;/h2&gt;
+&lt;h2 id=&quot;things-i-love-on-vs-code&quot;&gt;Things I love on VS Code&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;It&apos;s fast, amazingly fast! Scrolling through code, typing, intellisense, quick looking for files, expanding/collapsing code, file explorer actions. There isn&apos;t a single task that makes it feel slow (even though it&apos;s an Electron app, ie not native).&lt;/li&gt;
+&lt;li&gt;It’s fast, amazingly fast! Scrolling through code, typing, intellisense, quick looking for files, expanding/collapsing code, file explorer actions. There isn’t a single task that makes it feel slow (even though it’s an Electron app, ie not native).&lt;/li&gt;
 &lt;li&gt;Search is also fast, you just need to configure it to exclude git ignored files.&lt;/li&gt;
 &lt;li&gt;It remembers everything while restarting the editor. Opened files, collapsed sections, even search excluded paths.&lt;/li&gt;
-&lt;li&gt;As you have noticed, I didn&apos;t have to install a large number of extensions to get basic support for preferred languages.&lt;/li&gt;
-&lt;li&gt;I don&apos;t need a mini-map, there&apos;s the default Enhanced Scrollbar that&apos;s marking code changes, search result occurrences, cursor position, errors. The Enhanced Scrollbar has an absolute height, so that means on long files you don&apos;t have to scroll down to figure out if there are marked search results.&lt;/li&gt;
+&lt;li&gt;As you have noticed, I didn’t have to install a large number of extensions to get basic support for preferred languages.&lt;/li&gt;
+&lt;li&gt;I don’t need a mini-map, there’s the default Enhanced Scrollbar that’s marking code changes, search result occurrences, cursor position, errors. The Enhanced Scrollbar has an absolute height, so that means on long files you don’t have to scroll down to figure out if there are marked search results.&lt;/li&gt;
 &lt;li&gt;Markdown support is included. Markdown Preview (side-by-side or different tab). While on side-by-side preview mode, editor/preview panes are autoscrolling to reveal the selected content on either one of them!&lt;/li&gt;
 &lt;li&gt;Enabling/disabling extensions per workspace.&lt;/li&gt;
 &lt;li&gt;JavaScript jump to definition, smart intellisense based on actual code, path autocomplete on requires.&lt;/li&gt;
 &lt;li&gt;Built-in JSON file lint support.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;VS Code has something for everyone&lt;/h2&gt;
-&lt;p&gt;If you enjoy using an integrated terminal or source control within your editor, VS Code does that. I prefer to keep the best apps for each task, so for example I am working with &lt;a href=&quot;https://www.iterm2.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;iTerm2&lt;/a&gt; and &lt;a href=&quot;https://desktop.github.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;GitHub Desktop&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;vs-code-has-something-for-everyone&quot;&gt;VS Code has something for everyone&lt;/h2&gt;
+&lt;p&gt;If you enjoy using an integrated terminal or source control within your editor, VS Code does that. I prefer to keep the best apps for each task, so for example I am working with &lt;a href=&quot;https://www.iterm2.com/&quot;&gt;iTerm2&lt;/a&gt; and &lt;a href=&quot;https://desktop.github.com/&quot;&gt;GitHub Desktop&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Apart from the JS, Python, Ruby related extensions that I have listed, there is also support for Java, PHP and other programming languages.&lt;/p&gt;
-&lt;p&gt;And similarly to Atom, you can find almost every extension you may need on the &lt;a href=&quot;https://marketplace.visualstudio.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Marketplace&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Ruby on Rails, React, Redux, Webpack 2 boilerplate app]]></title><link>https://www.ioannispoulakas.com/2017/02/17/rails-react-redux-webpack-2-boilerplate-app/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2017/02/17/rails-react-redux-webpack-2-boilerplate-app/</guid><pubDate>Fri, 17 Feb 2017 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;And similarly to Atom, you can find almost every extension you may need on the &lt;a href=&quot;https://marketplace.visualstudio.com/&quot;&gt;Marketplace&lt;/a&gt;.&lt;/p&gt;
+</content:encoded></item><item><title>Ruby on Rails, React, Redux, Webpack 2 boilerplate app</title><link>https://www.ioannispoulakas.com/2017/02/17/rails-react-redux-webpack-2-boilerplate-app/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2017/02/17/rails-react-redux-webpack-2-boilerplate-app/</guid><pubDate>Fri, 17 Feb 2017 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;GitHub repo: &lt;a href=&quot;https://github.com/giannisp/rails-react-boilerplate&quot;&gt;giannisp/rails-react-boilerplate&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;This is a pure &lt;a href=&quot;http://rubyonrails.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Ruby on Rails&lt;/a&gt; / &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;React&lt;/a&gt; / &lt;a href=&quot;https://github.com/reactjs/redux&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Redux&lt;/a&gt; / &lt;a href=&quot;https://webpack.github.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Webpack 2&lt;/a&gt; boilerplate app that I have built and open-sourced. Highlights include using the newly released Webpack 2, as well as making the frontend part independent of the Asset Pipeline.&lt;/p&gt;
-&lt;h2&gt;Features&lt;/h2&gt;
+&lt;p&gt;This is a pure &lt;a href=&quot;http://rubyonrails.org/&quot;&gt;Ruby on Rails&lt;/a&gt; / &lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt; / &lt;a href=&quot;https://github.com/reactjs/redux&quot;&gt;Redux&lt;/a&gt; / &lt;a href=&quot;https://webpack.github.io/&quot;&gt;Webpack 2&lt;/a&gt; boilerplate app that I have built and open-sourced. Highlights include using the newly released Webpack 2, as well as making the frontend part independent of the Asset Pipeline.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Ruby on Rails 5.x&lt;/li&gt;
 &lt;li&gt;React 15.4.x&lt;/li&gt;
@@ -415,130 +397,134 @@ You may also want to check &lt;a href=&quot;https://marketplace.visualstudio.com
 &lt;li&gt;Postgres compatibility&lt;/li&gt;
 &lt;li&gt;Using Rails default gems and NPM packages only&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Exit Asset Pipeline, Enter Webpack&lt;/h2&gt;
+&lt;h2 id=&quot;exit-asset-pipeline-enter-webpack&quot;&gt;Exit Asset Pipeline, Enter Webpack&lt;/h2&gt;
 &lt;p&gt;Why Webpack?&lt;/p&gt;
 &lt;p&gt;Webpack is a module bundler. It can bundle all JS files for usage in the browser, but can also transform / bundle / package any resource or frontend asset.&lt;/p&gt;
-&lt;p&gt;JavaScript community moves forward at a rapid pace, new frameworks and modules are being released every day. The &lt;a href=&quot;https://www.npmjs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;NPM&lt;/a&gt; ecosystem is huge, and Webpack makes it available in the simplest way possible.&lt;/p&gt;
+&lt;p&gt;JavaScript community moves forward at a rapid pace, new frameworks and modules are being released every day. The &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;NPM&lt;/a&gt; ecosystem is huge, and Webpack makes it available in the simplest way possible.&lt;/p&gt;
 &lt;p&gt;Webpack can support every modern JS app, using ES6 or CommonJS modules, or both, create a single or multiple bundles, and in general can be customized to accomplish any application requirement.&lt;/p&gt;
 &lt;p&gt;The frontend assets on this app are placed on a more accessible directory, at &lt;code&gt;/front/js&lt;/code&gt; and &lt;code&gt;front/css&lt;/code&gt;, rather than &lt;code&gt;app/assets/javascripts&lt;/code&gt; and &lt;code&gt;app/assets/stylesheets&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;At any point, migration to a different backend (for example NodeJS) can be seamless since Webpack is running as a stand-alone bundler. There&apos;s absolutely no dependence to the Asset Pipeline or any other framework-specific module.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My Atom setup]]></title><link>https://www.ioannispoulakas.com/2017/01/15/my-atom-setup/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2017/01/15/my-atom-setup/</guid><pubDate>Sun, 15 Jan 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I have switched to using &lt;a href=&quot;https://atom.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Atom&lt;/a&gt; as my main code editor about 2 years ago and never looked back. Atom is open source, cross-platform - built on top of Electron, and can be highly customized.&lt;/p&gt;
+&lt;p&gt;At any point, migration to a different backend (for example NodeJS) can be seamless since Webpack is running as a stand-alone bundler. There’s absolutely no dependence to the Asset Pipeline or any other framework-specific module.&lt;/p&gt;
+</content:encoded></item><item><title>My Atom setup</title><link>https://www.ioannispoulakas.com/2017/01/15/my-atom-setup/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2017/01/15/my-atom-setup/</guid><pubDate>Sun, 15 Jan 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I have switched to using &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt; as my main code editor about 2 years ago and never looked back. Atom is open source, cross-platform - built on top of Electron, and can be highly customized.&lt;/p&gt;
 &lt;p&gt;Here is my Atom setup:&lt;/p&gt;
-&lt;h2&gt;Theme&lt;/h2&gt;
+&lt;h2 id=&quot;theme&quot;&gt;Theme&lt;/h2&gt;
 &lt;p&gt;UI Theme: One Dark&lt;br&gt;
 Syntax Theme: One Dark&lt;/p&gt;
 &lt;p&gt;This is the default theme on fresh Atom installations.&lt;br&gt;
 In the past I have been using Atom Dark, and it was quite hard to get used to something new, however One Dark is a lot more pleasing to the eye.&lt;/p&gt;
-&lt;h2&gt;Packages&lt;/h2&gt;
-&lt;h3&gt;The Essential&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/editorconfig&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;editorconfig&lt;/a&gt;&lt;br&gt;
+&lt;h2 id=&quot;packages&quot;&gt;Packages&lt;/h2&gt;
+&lt;h3 id=&quot;the-essential&quot;&gt;The Essential&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/editorconfig&quot;&gt;editorconfig&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install editorconfig&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Editorconfig helps developers to maintain consistent coding styles between different editors and platforms. You can also generate a new .editorconfig file using the Command Palette.&lt;br&gt;
-Hint: Disable Atom&apos;s default &quot;whitespace&quot; package to avoid possible conflicts.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/docblockr&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;docblockr&lt;/a&gt;&lt;br&gt;
+Hint: Disable Atom’s default “whitespace” package to avoid possible conflicts.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/docblockr&quot;&gt;docblockr&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install docblockr&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;A powerful package that helps you writing code documentation.&lt;br&gt;
 It can generate complete doc blocks, and makes it extremely fast to tab your way through filling-in the variable types and descriptions.&lt;br&gt;
 Hint: make sure you check the Settings as it provides some neat customization options.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/highlight-selected&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;highlight-selected&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/highlight-selected&quot;&gt;highlight-selected&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install highlight-selected&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Highlight the current selected word occurrences. Extremely useful for quickly checking variables, functions etc.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/file-icons&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;file-icons&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/file-icons&quot;&gt;file-icons&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install file-icons&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Display file type specific icons everywhere (treeview, tabs, finder etc).&lt;br&gt;
 Makes it a lot easier to quickly identifying opened files.&lt;/p&gt;
-&lt;h3&gt;Linter and related plugins&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;linter&lt;/a&gt;&lt;br&gt;
+&lt;h3 id=&quot;linter-and-related-plugins&quot;&gt;Linter and related plugins&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter&quot;&gt;linter&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install linter&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Linter is the base package that provides linting functionality for various file types via plugins. Should be the developer&apos;s first choice.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-eslint&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;linter-eslint&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;Linter is the base package that provides linting functionality for various file types via plugins. Should be the developer’s first choice.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-eslint&quot;&gt;linter-eslint&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install linter-eslint&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Lint JavaScript using &lt;a href=&quot;http://eslint.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;eslint&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;Lint JavaScript using &lt;a href=&quot;http://eslint.org/&quot;&gt;eslint&lt;/a&gt;&lt;br&gt;
 My favorite JS linter at the moment for NodeJS and React projects.&lt;br&gt;
-Hint: Check &quot;Disable when no ESLint config file is found&quot; on Settings.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-jshint&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;linter-jshint&lt;/a&gt;&lt;br&gt;
+Hint: Check “Disable when no ESLint config file is found” on Settings.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-jshint&quot;&gt;linter-jshint&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install linter-jshint&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Lint Javascript using &lt;a href=&quot;http://jshint.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;JSHint&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;Lint Javascript using &lt;a href=&quot;http://jshint.com/&quot;&gt;JSHint&lt;/a&gt;&lt;br&gt;
 Still need it for some older projects that were setup with it.&lt;br&gt;
-Hint: Check &quot;Disable when no jshintrc file in path&quot; on Settings.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-jsonlint&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;linter-jsonlint&lt;/a&gt;&lt;br&gt;
+Hint: Check “Disable when no jshintrc file in path” on Settings.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-jsonlint&quot;&gt;linter-jsonlint&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install linter-jsonlint&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Lint JSON files using &lt;a href=&quot;https://github.com/zaach/jsonlint&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;jsonlint&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-php&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;linter-php&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;Lint JSON files using &lt;a href=&quot;https://github.com/zaach/jsonlint&quot;&gt;jsonlint&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-php&quot;&gt;linter-php&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install linter-php&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Lint PHP files using the php binary.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-pylint&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;linter-pylint&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-pylint&quot;&gt;linter-pylint&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install linter-pylint&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Lint Python files using &lt;a href=&quot;https://www.pylint.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;pylint&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-ruby&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;linter-ruby&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;Lint Python files using &lt;a href=&quot;https://www.pylint.org/&quot;&gt;pylint&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-ruby&quot;&gt;linter-ruby&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install linter-ruby&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Lint Ruby files using ruby binary.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-xmllint&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;linter-xmllint&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/linter-xmllint&quot;&gt;linter-xmllint&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install linter-xmllint&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Lint XML files using &lt;a href=&quot;http://xmlsoft.org/xmllint.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;xmllint&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;Minimap and related plugins&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/minimap&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;minimap&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;Lint XML files using &lt;a href=&quot;http://xmlsoft.org/xmllint.html&quot;&gt;xmllint&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;minimap-and-related-plugins&quot;&gt;Minimap and related plugins&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/minimap&quot;&gt;minimap&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install minimap&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Minimap provides a mini-preview of the full source code on every tab, and comes with a variety of useful plugins.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/minimap-cursorline&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;minimap-cursorline&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/minimap-cursorline&quot;&gt;minimap-cursorline&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install minimap-cursorline&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Display the location of the cursor position.&lt;br&gt;
 Hint: you can customize the color via your stylesheet.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/minimap-find-and-replace&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;minimap-find-and-replace&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/minimap-find-and-replace&quot;&gt;minimap-find-and-replace&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install minimap-find-and-replace&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Display the search matches.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/minimap-git-diff&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;minimap-git-diff&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/minimap-git-diff&quot;&gt;minimap-git-diff&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install minimap-git-diff&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Display git diffs, possibly one of the most useful plugins along with the next one.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/minimap-highlight-selected&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;minimap-highlight-selected&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/minimap-highlight-selected&quot;&gt;minimap-highlight-selected&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install minimap-highlight-selected&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Display the current selected word occurrences.&lt;/p&gt;
-&lt;h3&gt;For JavaScript development&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/js-hyperclick&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;js-hyperclick&lt;/a&gt;&lt;br&gt;
+&lt;h3 id=&quot;for-javascript-development&quot;&gt;For JavaScript development&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/js-hyperclick&quot;&gt;js-hyperclick&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install hyperclick js-hyperclick&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;It lets you jump to where variables are defined, or even required files.&lt;br&gt;
 Hint: there are plugins for other languages based on the hyperclick base package.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/autocomplete-paths&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;autocomplete-paths&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/autocomplete-paths&quot;&gt;autocomplete-paths&lt;/a&gt;
 &lt;code&gt;apm install autocomplete-paths&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Provides autocomplete functionality for relative paths and files. Not just for JS of course, but extremely useful on your imports/requires.&lt;/p&gt;
-&lt;h3&gt;Tools&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/atom-beautify&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;atom-beautify&lt;/a&gt;
+&lt;h3 id=&quot;tools&quot;&gt;Tools&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/atom-beautify&quot;&gt;atom-beautify&lt;/a&gt;
 &lt;code&gt;apm install atom-beautify&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;It can beautify a great variety of files, however I mainly use it to prettify JSON files.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/sort-lines&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;sort-lines&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/sort-lines&quot;&gt;sort-lines&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install sort-lines&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Sort selected lines, or get unique lines. Nice to have.&lt;/p&gt;
-&lt;h3&gt;Other syntax support&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/atom-jade&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;atom-jade&lt;/a&gt;&lt;br&gt;
+&lt;h3 id=&quot;other-syntax-support&quot;&gt;Other syntax support&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://atom.io/packages/atom-jade&quot;&gt;atom-jade&lt;/a&gt;&lt;br&gt;
 &lt;code&gt;apm install atom-jade&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Adds &lt;a href=&quot;https://pugjs.org/api/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Jade&lt;/a&gt; template language support.&lt;/p&gt;
-&lt;h2&gt;Competition (VS Code)&lt;/h2&gt;
-&lt;p&gt;You might be wondering why Atom and not &lt;a href=&quot;https://code.visualstudio.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;VS Code&lt;/a&gt;. Especially when VS Code seems a lot faster (have you checked memory consumption though?).&lt;/p&gt;
+&lt;p&gt;Adds &lt;a href=&quot;https://pugjs.org/api/getting-started.html&quot;&gt;Jade&lt;/a&gt; template language support.&lt;/p&gt;
+&lt;h2 id=&quot;competition-vs-code&quot;&gt;Competition (VS Code)&lt;/h2&gt;
+&lt;p&gt;You might be wondering why Atom and not &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;VS Code&lt;/a&gt;. Especially when VS Code seems a lot faster (have you checked memory consumption though?).&lt;/p&gt;
 &lt;p&gt;Well at least for my needs, the above packages make me more productive. Some of them are not available on VS Code at all yet, or their respective ones are just not that powerful.&lt;/p&gt;
-&lt;p&gt;VS Code has some really cool features, like JS debugging with breakpoints that I am using sometimes. The integrated git and terminal support may also appeal a lot users, however I prefer to be using specific apps (like iTerm 2 and GitHub Desktop or SourceTree) that just do a lot more.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Powered by]]></title><link>https://www.ioannispoulakas.com/2017/01/13/powered-by/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2017/01/13/powered-by/</guid><pubDate>Fri, 13 Jan 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This post is dedicated to the technologies and code that are powering up the site.&lt;/p&gt;
-&lt;p&gt;The site is hosted on &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;GitHub Pages&lt;/a&gt;.&lt;br&gt;
+&lt;p&gt;VS Code has some really cool features, like JS debugging with breakpoints that I am using sometimes. The integrated git and terminal support may also appeal a lot users, however I prefer to be using specific apps (like iTerm 2 and GitHub Desktop or SourceTree) that just do a lot more.&lt;/p&gt;
+</content:encoded></item><item><title>Powered by</title><link>https://www.ioannispoulakas.com/2017/01/13/powered-by/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2017/01/13/powered-by/</guid><pubDate>Fri, 13 Jan 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This post is dedicated to the technologies and code that are powering up the site.&lt;/p&gt;
+&lt;p&gt;The site is hosted on &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;.&lt;br&gt;
 GitHub Pages is designed to host a static site directly from a GitHub repository.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Jekyll&lt;/a&gt;, a Ruby gem, is the library that does all the magic, generating the static content pages and blogs posts.&lt;br&gt;
-The two-columns responsive theme that is currently running is a customized version of the excellent &lt;a href=&quot;https://github.com/poole/hyde&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Hyde&lt;/a&gt; theme.&lt;/p&gt;
-&lt;p&gt;Here&apos;s how you can easily get started:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll&lt;/a&gt;, a Ruby gem, is the library that does all the magic, generating the static content pages and blogs posts.&lt;br&gt;
+The two-columns responsive theme that is currently running is a customized version of the excellent &lt;a href=&quot;https://github.com/poole/hyde&quot;&gt;Hyde&lt;/a&gt; theme.&lt;/p&gt;
+&lt;p&gt;Here’s how you can easily get started:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Start a new repository on GitHub (&lt;a href=&quot;https://help.github.com/articles/user-organization-and-project-pages/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;check how it should be named and branch details&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Create a new RVM or rbenv environment using Ruby &gt;=2.x.&lt;/li&gt;
+&lt;li&gt;Start a new repository on GitHub (&lt;a href=&quot;https://help.github.com/articles/user-organization-and-project-pages/&quot;&gt;check how it should be named and branch details&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Create a new RVM or rbenv environment using Ruby &amp;gt;=2.x.&lt;/li&gt;
 &lt;li&gt;Init a new local git repository&lt;/li&gt;
-&lt;li&gt;Start a new Gemfile including at least &lt;code&gt;github-pages&lt;/code&gt; (&lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com/blob/master/Gemfile&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;example&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;Start a new Gemfile including at least &lt;code&gt;github-pages&lt;/code&gt; (&lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com/blob/master/Gemfile&quot;&gt;example&lt;/a&gt;).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;gem install bundler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;bundle install&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Now you can select a preferred theme, like Hyde, and place it inside the repo.
-GitHub Pages is currently using Jekyll 3.x, so you may need to customize the &lt;code&gt;_config.yml&lt;/code&gt; for compatibility (&lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com/blob/master/_config.yml&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;example&lt;/a&gt;).&lt;/p&gt;
+GitHub Pages is currently using Jekyll 3.x, so you may need to customize the &lt;code&gt;_config.yml&lt;/code&gt; for compatibility (&lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com/blob/master/_config.yml&quot;&gt;example&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Running and viewing the site locally:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Do &lt;code&gt;jekyll serve&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Visit &lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;http://localhost:4000&lt;/a&gt; on your browser&lt;/li&gt;
+&lt;li&gt;Visit &lt;a href=&quot;http://localhost:4000&quot;&gt;http://localhost:4000&lt;/a&gt; on your browser&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;After customizing the look and feel, and adding some content, you should be ready to publish it!&lt;br&gt;
 Simply push to the appropriate branch on the remote GitHub repository.&lt;/p&gt;
-&lt;p&gt;You can also use a custom domain with GitHub Pages, which is really cool and &lt;a href=&quot;https://help.github.com/articles/using-a-custom-domain-with-github-pages/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;easy to accomplish&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The full source code of this site is available at &lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;giannisp/ioannispoulakas.com&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World!]]></title><link>https://www.ioannispoulakas.com/2017/01/04/hello-world/</link><guid isPermaLink="false">https://www.ioannispoulakas.com/2017/01/04/hello-world/</guid><pubDate>Wed, 04 Jan 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello World! I am &lt;a href=&quot;/about/&quot;&gt;Ioannis&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can also use a custom domain with GitHub Pages, which is really cool and &lt;a href=&quot;https://help.github.com/articles/using-a-custom-domain-with-github-pages/&quot;&gt;easy to accomplish&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The full source code of this site is available at &lt;a href=&quot;https://github.com/giannisp/ioannispoulakas.com&quot;&gt;giannisp/ioannispoulakas.com&lt;/a&gt;.&lt;/p&gt;
+</content:encoded></item><item><title>Hello World!</title><link>https://www.ioannispoulakas.com/2017/01/04/hello-world/</link><guid isPermaLink="true">https://www.ioannispoulakas.com/2017/01/04/hello-world/</guid><pubDate>Wed, 04 Jan 2017 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello World! I am &lt;a href=&quot;/about/&quot;&gt;Ioannis&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;This post marks the beginning of my new personal site and blog!&lt;/p&gt;
 &lt;p&gt;I will be posting about coding-related stuff and tools that are part of my daily routine and I enjoy working with. Also you can expect hints and tips that are coming from my remote-working life.&lt;/p&gt;
-&lt;p&gt;You can follow the blog by subscribing on the &lt;a href=&quot;/rss.xml&quot;&gt;RSS feed&lt;/a&gt;.&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;p&gt;You can follow the blog by subscribing on the &lt;a href=&quot;/rss.xml&quot;&gt;RSS feed&lt;/a&gt;.&lt;/p&gt;
+</content:encoded></item></channel></rss>
