@@ -1,6 +1,6 @@
 # Installation
 
-This website is using [Gatsby 5.x](https://www.gatsbyjs.org/).
+This website is using [Astro](https://astro.build/).
 
 ## Requirements
 
@@ -13,6 +13,11 @@ This website is using [Gatsby 5.x](https://www.gatsbyjs.org/).
 ## Run for development purposes
 
 - `npm run dev`
+
+## Lint and type check
+
+- `npm run lint`
+- `npm run check`
 
 ## Build and deploy to GitHub Pages
 

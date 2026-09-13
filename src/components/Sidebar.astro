@@ -1,0 +1,73 @@
+---
+/**
+ * Sidebar: brand, navigation, social links.
+ */
+
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faRss } from '@fortawesome/free-solid-svg-icons';
+
+import IconLink from './IconLink.astro';
+import { site } from '../site';
+
+const { pathname } = Astro.url;
+const isBlog = pathname === '/';
+const isAbout = pathname.replace(/\/?$/, '/') === '/about/';
+---
+
+<div class="text-center md:text-left md:fixed md:w-92 md:inset-0 px-10 py-5 bg-theme-blue text-white">
+  <div>
+    <div>
+      <h1 class="text-3xl font-title font-bold">
+        <a href="/">{site.brand}</a>
+      </h1>
+      <p class="mt-1 text-2xl text-white/50 leading-tight">
+        {site.description}
+      </p>
+    </div>
+
+    <nav class="mt-5 md:mt-7 text-xl">
+      <a class:list={['block', { 'font-bold': isBlog }]} href="/">
+        Blog
+      </a>
+      <a class:list={['block mt-2', { 'font-bold': isAbout }]} href="/about/">
+        About
+      </a>
+    </nav>
+
+    <div class="flex mt-5 md:mt-12 justify-center md:justify-start">
+      <IconLink
+        url="https://github.com/giannisp"
+        icon={faGithub}
+        label="GitHub"
+      />
+      <IconLink
+        url="https://gr.linkedin.com/in/ipoulakas"
+        icon={faLinkedin}
+        label="LinkedIn"
+      />
+      <IconLink
+        url="https://twitter.com/ipoulakas"
+        icon={faTwitter}
+        label="Twitter"
+      />
+      <IconLink
+        url="mailto:giannis.p@gmail.com"
+        icon={faEnvelope}
+        label="Email"
+      />
+      <IconLink url="/rss.xml" icon={faRss} label="RSS feed" />
+    </div>
+
+    <p class="text-lg text-white/50 mt-5">
+      &copy; {new Date().getFullYear()}. All rights reserved.
+    </p>
+
+    <p>
+      <a href="/private-company/">Private Company</a>
+    </p>
+  </div>
+</div>

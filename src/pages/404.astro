@@ -1,0 +1,23 @@
+---
+/**
+ * 404 page.
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 - Page not found">
+  <div class="mb-16">
+    <h1 class="text-gray-800 text-4xl font-bold mb-4">404: Page not found</h1>
+    <p class="text-lg">
+      Sorry, we have misplaced that URL or it&rsquo;s pointing to something that
+      doesn&rsquo;t exist.
+    </p>
+    <p class="text-lg">
+      <a href="/" class="text-theme-blue">
+        Head back home
+      </a>{' '}
+      to try finding it again.
+    </p>
+  </div>
+</BaseLayout>

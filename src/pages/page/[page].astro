@@ -1,0 +1,43 @@
+---
+/**
+ * Posts archive pages: /page/2/, /page/3/, ...
+ */
+
+import type { GetStaticPaths } from 'astro';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostList from '../../components/PostList.astro';
+import { site } from '../../site';
+import { getSortedPosts } from '../../utils/posts';
+
+export const getStaticPaths = (async () => {
+  const posts = await getSortedPosts();
+  const totalPages = Math.ceil(posts.length / site.postsPerPage);
+
+  return Array.from({ length: totalPages - 1 }, (_, index) => {
+    const currentPage = index + 2;
+    const offset = (currentPage - 1) * site.postsPerPage;
+
+    return {
+      params: { page: String(currentPage) },
+      props: {
+        currentPage,
+        posts: posts.slice(offset, offset + site.postsPerPage),
+        prevPagePath: currentPage === 2 ? '/' : `/page/${currentPage - 1}/`,
+        nextPagePath:
+          currentPage < totalPages ? `/page/${currentPage + 1}/` : undefined,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { currentPage, posts, prevPagePath, nextPagePath } = Astro.props;
+---
+
+<BaseLayout title={`Posts Archive - Page ${currentPage}`}>
+  <PostList
+    posts={posts}
+    prevPagePath={prevPagePath}
+    nextPagePath={nextPagePath}
+  />
+</BaseLayout>

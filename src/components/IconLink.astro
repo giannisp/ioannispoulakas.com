@@ -1,0 +1,38 @@
+---
+/**
+ * External link rendered as a Font Awesome icon (inline SVG, no JS).
+ */
+
+import type { IconDefinition } from '@fortawesome/fontawesome-common-types';
+
+interface Props {
+  url: string;
+  icon: IconDefinition;
+  label: string;
+}
+
+const { url, icon, label } = Astro.props;
+const [width, height, , , path] = icon.icon;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="text-3xl mr-5 last:mr-0 transition duration-300 ease-in-out hover:scale-150"
+  aria-label={label}
+>
+  <svg
+    class="svg-inline--fa"
+    aria-hidden="true"
+    focusable="false"
+    role="img"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox={`0 0 ${width} ${height}`}
+  >
+    <path
+      fill="currentColor"
+      d={Array.isArray(path) ? path.join(' ') : path}
+    ></path>
+  </svg>
+</a>

@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-theme-blue: #2574a9;
+  --color-typography-red: #bf616a;
+
+  --font-title: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'PT Sans', Helvetica, Arial, sans-serif;
+}
 
 .prose a {
   @apply text-theme-blue no-underline;
@@ -10,10 +17,22 @@
   @apply px-2 py-2 text-base rounded bg-gray-100 text-typography-red font-normal;
 }
 
+.prose code::before,
+.prose code::after {
+  content: '';
+}
+
 .prose pre code {
   @apply px-0 py-0 bg-transparent text-white;
 }
 
 a:hover {
   @apply underline;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
 }
