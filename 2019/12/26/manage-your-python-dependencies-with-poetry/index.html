@@ -3,14 +3,14 @@ Today I decided to try out <a href="https://python-poetry.org/">Poetry</a> since
 <p>Poetry is a tool for managing Python dependencies as well as virtual environments.</p>
 <h3 id="getting-started">Getting started</h3>
 <p>Poetry can be installed by running:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -sSL</span><span style="color:#9ECBFF"> https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> python</span></span></code></pre>
 <p>Installation will add Poetry on the home directory and make it automatically available on bash:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>export PATH="$HOME/.poetry/bin:$PATH"</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> PATH</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">$HOME</span><span style="color:#9ECBFF">/.poetry/bin:</span><span style="color:#E1E4E8">$PATH</span><span style="color:#9ECBFF">"</span></span></code></pre>
 <h3 id="installing-python-dependencies">Installing Python dependencies</h3>
 <p>Poetry is using the standardized file format <a href="https://www.python.org/dev/peps/pep-0518/">pyproject.toml</a>.<br>
 The <code>pyproject.toml</code> file can be created by simply running <code>poetry init</code> and following the on-screen instructions.</p>
 <p>With the <code>pyproject.toml</code> file in place, let’s try to install the popular library <code>requests</code>:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>poetry add requests</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">poetry</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> requests</span></span></code></pre>
 <p>Poetry will automagically:</p>
 <ul>
 <li>Create a new virtualenv if it doesn’t already exist</li>
@@ -20,31 +20,31 @@ The <code>pyproject.toml</code> file can be created by simply running <code>poet
 </ul>
 <p>Note: make sure both <code>pyproject.toml</code> and <code>poetry.lock</code> are under version control.</p>
 <p>Dev dependencies can be installed by using the <code>--dev</code> flag, for example:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>poetry add nose --dev</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">poetry</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> nose</span><span style="color:#79B8FF"> --dev</span></span></code></pre>
 <h3 id="uninstalling-python-dependencies">Uninstalling Python dependencies</h3>
 <p>Poetry can uninstall a dependency by running:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>poetry remove requests</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">poetry</span><span style="color:#9ECBFF"> remove</span><span style="color:#9ECBFF"> requests</span></span></code></pre>
 <h3 id="running-commands-on-the-virtualenv">Running commands on the virtualenv</h3>
 <p>Any command can be run on the created virtualenv by using <code>poetry run</code>, for example:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>poetry run python --version</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">poetry</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> python</span><span style="color:#79B8FF"> --version</span></span></code></pre>
 <p>Alternatively a shell can be spawned by running <code>poetry shell</code> to avoid prefixing every command.</p>
 <h3 id="managing-python-virtual-environments-for-a-project">Managing Python virtual environments for a project</h3>
 <p>Let’s suppose that a project has to be run specifically on Python version 3.7.5.
 Poetry can make use of pyenv environments or even python executables that are available on the path.</p>
 <p>Using <code>pyenv</code> to get Python 3.7.5:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>pyenv install 3.7.5</span></span>
-<span class="line"><span>pyenv local 3.7.5</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">pyenv</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> 3.7.5</span></span>
+<span class="line"><span style="color:#B392F0">pyenv</span><span style="color:#9ECBFF"> local</span><span style="color:#79B8FF"> 3.7.5</span></span></code></pre>
 <p>Update Python version at <code>pyproject.toml</code>:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>[tool.poetry.dependencies]</span></span>
-<span class="line"><span>python = "^3.7.5"</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="toml"><code><span class="line"><span style="color:#E1E4E8">[</span><span style="color:#B392F0">tool</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">poetry</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">dependencies</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">python = </span><span style="color:#9ECBFF">"^3.7.5"</span></span></code></pre>
 <p>Re-install dependencies for Python 3.7.5:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>poetry install</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">poetry</span><span style="color:#9ECBFF"> install</span></span></code></pre>
 <p>List all existing virtual environments for a project:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>poetry env list</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">poetry</span><span style="color:#9ECBFF"> env</span><span style="color:#9ECBFF"> list</span></span></code></pre>
 <p>Switch a virtual environment:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>poetry env use &lt;env-name&gt;</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">poetry</span><span style="color:#9ECBFF"> env</span><span style="color:#9ECBFF"> use</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">env-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">&gt;</span></span></code></pre>
 <p>Remove a virtual environment:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>poetry env remove &lt;env-name&gt;</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">poetry</span><span style="color:#9ECBFF"> env</span><span style="color:#9ECBFF"> remove</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">env-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">&gt;</span></span></code></pre>
 <h3 id="other-useful-poetry-functionalities">Other useful Poetry functionalities</h3>
 <p>Poetry can <code>build</code> and <code>publish</code> packages using the respective commands, something that is missing from Pipenv.<br>
 Poetry lock file can be exported to other formats like <code>requirements.txt</code> by using the <code>export</code> command.<br>
@@ -52,8 +52,8 @@ Poetry can display package info by using the <code>search</code> command.</p>
 <h3 id="docker">Docker</h3>
 <p>Deploying dependencies on Docker containers should not require installing them under a virtualenv.<br>
 Poetry is providing a handy command for disabling the default behaviour:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>RUN poetry config virtualenvs.create false \</span></span>
-<span class="line"><span>  &amp;&amp; poetry install --no-dev --no-interaction --no-ansi</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> poetry config virtualenvs.create false \</span></span>
+<span class="line"><span style="color:#E1E4E8">  &amp;&amp; poetry install --no-dev --no-interaction --no-ansi</span></span></code></pre>
 <h3 id="conclusion">Conclusion</h3>
 <p>Poetry is an awesome tool, it builds upon previous Pipenv features while at the same time is simplifying the virtual environments handling. Since version 1.0 is out it can be considered pretty stable and ready for production.</p>
 </div></div></div></div></body></html>

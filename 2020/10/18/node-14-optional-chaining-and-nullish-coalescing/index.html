@@ -5,36 +5,36 @@
 <p>Long gone will be the days of checking for the existence of a deeply nested property using the <code>&amp;&amp;</code> operator or <a href="https://lodash.com/docs/4.17.15#get">lodash.get</a>.</p>
 <p>The optional chaining operator is <code>?.</code> and it permits accessing any nested property in a safe way with a single expression.</p>
 <p>Example:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// Using the &amp;&amp; operator</span></span>
-<span class="line"><span>if (foo &amp;&amp; foo.bar &amp;&amp; foo.bar.baz) {</span></span>
-<span class="line"><span>  // do something with foo.bar.baz</span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// Using the ?. operator</span></span>
-<span class="line"><span>if (foo?.bar?.baz) {</span></span>
-<span class="line"><span>  // do something with foo.bar.baz</span></span>
-<span class="line"><span>}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// Using the &amp;&amp; operator</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (foo </span><span style="color:#F97583">&amp;&amp;</span><span style="color:#E1E4E8"> foo.bar </span><span style="color:#F97583">&amp;&amp;</span><span style="color:#E1E4E8"> foo.bar.baz) {</span></span>
+<span class="line"><span style="color:#6A737D">  // do something with foo.bar.baz</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Using the ?. operator</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (foo?.bar?.baz) {</span></span>
+<span class="line"><span style="color:#6A737D">  // do something with foo.bar.baz</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h3 id="nullish-coalescing">Nullish coalescing</h3>
 <p>The nullish coalescing logical operator is <code>??</code> and it returns the right-hand side operand only if the left-hand side operand is <code>null</code> or <code>undefined</code>.</p>
 <p>This sounds similar to the logical <code>OR (||)</code> operator, however the <code>||</code> operator returns the right-hand side operand when the left-hand side is any <code>falsy</code> value.</p>
 <p>Thus for many cases that a default value has to be assigned only when a value is <code>null</code> or <code>undefined</code>, the nullish coalescing operator comes in handy.</p>
 <p>Example:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>const foo = 0;</span></span>
-<span class="line"><span>console.log(foo || 10); // 10</span></span>
-<span class="line"><span>console.log(foo ?? 10); // 0</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>const bar = false;</span></span>
-<span class="line"><span>console.log(bar || true); // true</span></span>
-<span class="line"><span>console.log(bar ?? true); // false</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>const baz = '';</span></span>
-<span class="line"><span>console.log(baz || 'default'); // 'default'</span></span>
-<span class="line"><span>console.log(baz ?? 'default'); // ''</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> foo</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(foo </span><span style="color:#F97583">||</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 10</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(foo </span><span style="color:#F97583">??</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> bar</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(bar </span><span style="color:#F97583">||</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// true</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(bar </span><span style="color:#F97583">??</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// false</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> baz</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> ''</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(baz </span><span style="color:#F97583">||</span><span style="color:#9ECBFF"> 'default'</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 'default'</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(baz </span><span style="color:#F97583">??</span><span style="color:#9ECBFF"> 'default'</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// ''</span></span></code></pre>
 <h3 id="native-eslint-support">Native ESLint support</h3>
 <p>ESLint has native support for optional chaining and nullish coalescing since 7.5.0 version. However to enable the new syntax it requires the following configuration:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{</span></span>
-<span class="line"><span>  "parserOptions": {</span></span>
-<span class="line"><span>    "ecmaVersion": 2020</span></span>
-<span class="line"><span>  }</span></span>
-<span class="line"><span>}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "parserOptions"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "ecmaVersion"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2020</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 </div></div></div></div></body></html>

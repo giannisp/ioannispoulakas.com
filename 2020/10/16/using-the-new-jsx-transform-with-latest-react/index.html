@@ -2,37 +2,37 @@
 <p>React has recently introduced the <a href="https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html">new JSX transform</a> version.</p>
 <p>What’s so cool about it?<br>
 You can now use JSX on your components without importing React!</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>import React from 'react'; // no longer required!</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// no longer required!</span></span></code></pre>
 <p>Of course if you are using hooks, or other React features, you would still need to import those.</p>
 <p>Also depending on the project, the compiled output bundle size might be reduced.</p>
 <h3 id="supported-react-versions">Supported React versions</h3>
 <p>Initially the new JSX transform has been announced for the forthcoming React 17 version. However, in a surprisingly move, React team has backported the new JSX transform to React 16.14.0, 15.7.0, and 0.14.10 versions!</p>
 <h3 id="enable-the-new-jsx-tranform-with-babelpreset-react">Enable the new JSX tranform with babel/preset-react</h3>
 <p>The new JSX transform can be enabled on babel/preset-react (v7) by simply setting the <code>runtime</code> property to <code>automatic</code>:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{</span></span>
-<span class="line"><span>  "presets": [</span></span>
-<span class="line"><span>    [</span></span>
-<span class="line"><span>      "@babel/preset-react",</span></span>
-<span class="line"><span>      {</span></span>
-<span class="line"><span>        "runtime": "automatic"</span></span>
-<span class="line"><span>      }</span></span>
-<span class="line"><span>    ]</span></span>
-<span class="line"><span>  ]</span></span>
-<span class="line"><span>}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "presets"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span></span>
+<span class="line"><span style="color:#9ECBFF">      "@babel/preset-react"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#79B8FF">        "runtime"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"automatic"</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h3 id="enable-the-new-jsx-transform-on-gatsby">Enable the new JSX transform on Gatsby</h3>
 <p>Gatsby since version 2.24.5 does support the new JSX transform.<br>
 It can be enabled via the custom Babel configuration file by setting the <code>reactRuntime</code> property to <code>automatic</code>:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{</span></span>
-<span class="line"><span>  "presets": [</span></span>
-<span class="line"><span>    [</span></span>
-<span class="line"><span>      "babel-preset-gatsby",</span></span>
-<span class="line"><span>      {</span></span>
-<span class="line"><span>        "reactRuntime": "automatic",</span></span>
-<span class="line"><span>      }</span></span>
-<span class="line"><span>    ]</span></span>
-<span class="line"><span>  ]</span></span>
-<span class="line"><span>}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "presets"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">    [</span></span>
+<span class="line"><span style="color:#9ECBFF">      "babel-preset-gatsby"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#79B8FF">        "reactRuntime"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"automatic"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <h3 id="keeping-eslint-happy">Keeping ESLint happy</h3>
 <p>Good old ESLint will still complain if you try to use JSX on your components without importing React, so you would just have to turn off the following rule:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"react/react-in-jsx-scope": "off"</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#9ECBFF">"react/react-in-jsx-scope"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"off"</span></span></code></pre>
 </div></div></div></div></body></html>

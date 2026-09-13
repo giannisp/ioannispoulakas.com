@@ -19,6 +19,6 @@ and add a new entry/line with the path:<br>
 <p>Install bash-completion on macOS:<br>
 <code>brew install bash-completion@2</code></p>
 <p>Initialize bash-completion@2 on <code>~/.bash_profile</code> with backwards compatibility:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"</span></span>
-<span class="line"><span>[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] &amp;&amp; . "/usr/local/etc/profile.d/bash_completion.sh"</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> BASH_COMPLETION_COMPAT_DIR</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/usr/local/etc/bash_completion.d"</span></span>
+<span class="line"><span style="color:#E1E4E8">[[ </span><span style="color:#F97583">-r</span><span style="color:#9ECBFF"> "/usr/local/etc/profile.d/bash_completion.sh"</span><span style="color:#E1E4E8"> ]] &amp;&amp; </span><span style="color:#79B8FF">.</span><span style="color:#9ECBFF"> "/usr/local/etc/profile.d/bash_completion.sh"</span></span></code></pre>
 </div></div></div></div></body></html>
