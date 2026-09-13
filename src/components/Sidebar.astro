@@ -6,7 +6,7 @@
 import {
   faGithub,
   faLinkedin,
-  faTwitter,
+  faXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faRss } from '@fortawesome/free-solid-svg-icons';
 
@@ -49,11 +49,7 @@ const isAbout = pathname.replace(/\/?$/, '/') === '/about/';
         icon={faLinkedin}
         label="LinkedIn"
       />
-      <IconLink
-        url="https://twitter.com/ipoulakas"
-        icon={faTwitter}
-        label="Twitter"
-      />
+      <IconLink url="https://x.com/ipoulakas" icon={faXTwitter} label="X" />
       <IconLink
         url="mailto:giannis.p@gmail.com"
         icon={faEnvelope}
