@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#2574a9"><title>Migrating from Gatsby to Astro - Ioannis Poulakas</title><meta name="og:title" content="Migrating from Gatsby to Astro - Ioannis Poulakas"><meta name="og:description" content="Software Developer"><meta name="og:type" content="website"><meta name="google-site-verification" content="-afp9E5QbuMeEQi8FhPg-0g_sfaI-ZtjDht6epwGxEI"><link rel="icon" href="/favicon-32x32.png" type="image/png"><link rel="manifest" href="/manifest.webmanifest"><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png"><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png"><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png"><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png"><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png"><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png"><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png"><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png"><link rel="alternate" type="application/rss+xml" title="Ioannis Poulakas" href="/rss.xml"><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"><link rel="stylesheet" href="/_astro/BaseLayout.C9iMcBmj.css"></head><body><div class="font-body"><div class="text-center md:text-left md:fixed md:w-92 md:inset-0 px-10 py-5 bg-theme-blue text-white"><div><div><h1 class="text-3xl font-title font-bold"><a href="/">Ioannis Poulakas</a></h1><p class="mt-1 text-2xl text-white/50 leading-tight">Software Developer</p></div><nav class="mt-5 md:mt-7 text-xl"><a class="block" href="/">Blog</a><a class="block mt-2" href="/about/">About</a></nav><div class="flex mt-5 md:mt-12 justify-center md:justify-start"><a href="https://github.com/giannisp" target="_blank" rel="noopener noreferrer" class="text-3xl mr-5 last:mr-0 transition duration-300 ease-in-out hover:scale-150" aria-label="GitHub"><svg class="svg-inline--fa" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a><a href="https://gr.linkedin.com/in/ipoulakas" target="_blank" rel="noopener noreferrer" class="text-3xl mr-5 last:mr-0 transition duration-300 ease-in-out hover:scale-150" aria-label="LinkedIn"><svg class="svg-inline--fa" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a><a href="https://x.com/ipoulakas" target="_blank" rel="noopener noreferrer" class="text-3xl mr-5 last:mr-0 transition duration-300 ease-in-out hover:scale-150" aria-label="X"><svg class="svg-inline--fa" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path></svg></a><a href="mailto:giannis.p@gmail.com" target="_blank" rel="noopener noreferrer" class="text-3xl mr-5 last:mr-0 transition duration-300 ease-in-out hover:scale-150" aria-label="Email"><svg class="svg-inline--fa" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path></svg></a><a href="/rss.xml" target="_blank" rel="noopener noreferrer" class="text-3xl mr-5 last:mr-0 transition duration-300 ease-in-out hover:scale-150" aria-label="RSS feed"><svg class="svg-inline--fa" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416c0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96C14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416zM32 160c159.1 0 288 128.9 288 288c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg></a></div><p class="text-lg text-white/50 mt-5">&copy; 2026. All rights reserved.</p><p><a href="/private-company/">Private Company</a></p></div></div><div class="max-w-6xl px-12 md:ml-92 md:px-24 py-10"><div class="mb-16"><h1 class="text-gray-800 text-4xl font-bold">Migrating from Gatsby to Astro</h1><p class="mt-2 mb-8 text-xl text-gray-400">13 Sep 2026</p><div class="prose prose-xl"><p>Back in 2019 I <a href="/2019/08/30/migrating-from-jekyll-to-gatsby/">migrated this website from Jekyll to Gatsby</a>.</p>
+<p>Seven years later, this website is now powered by <a href="https://astro.build">Astro</a>. This post describes why, and how it went.</p>
+<h2 id="why-leave-gatsby">Why leave Gatsby</h2>
+<p>Netlify acquired Gatsby in 2023, and most of the core team moved on shortly after. Gatsby still ships compatibility releases, but no new features are planned, and most of the plugin ecosystem hasn’t been updated in years.</p>
+<p>Nothing was broken. But every dependency update felt like maintaining something that nobody else was maintaining anymore.</p>
+<h2 id="what-this-website-actually-needs">What this website actually needs</h2>
+<p>Looking at the codebase with fresh eyes, the list is short:</p>
+<ul>
+<li>Markdown pages and posts.</li>
+<li>A layout with a sidebar.</li>
+<li>Posts pagination.</li>
+<li>An RSS feed and an XML sitemap.</li>
+<li>A custom 404 page.</li>
+<li>Deploying to GitHub Pages.</li>
+</ul>
+<p>No database, no user input, nothing interactive.</p>
+<p>Yet the Gatsby version was running GraphQL queries at build time, and shipping React and a client-side router to every visitor, just to render static text. None of it was wrong in 2019, but today Astro can do the same with a lot less.</p>
+<h2 id="why-astro">Why Astro</h2>
+<p>Astro is built for exactly this kind of website: content first, static output, and zero JavaScript sent to the browser by default. Components are written as <code>.astro</code> files, which look a lot like JSX but only run at build time.</p>
+<p>There is still an option to add React (or other UI frameworks) on a single interactive component if needed, while the rest of the website stays pure HTML and CSS.</p>
+<h2 id="migration-planning">Migration planning</h2>
+<p>Same plan as last time: keep the markdown content as is, preserve the layout, and keep every existing URL, so that search rankings and RSS subscriptions remain unaffected.</p>
+<p>One difference though. Last time, plugins were carefully picked one by one. This time, the goal was to stick with Astro defaults as much as possible, and only add something if the website would otherwise look or behave differently.</p>
+<h3 id="gatsby-to-astro-mapping">Gatsby to Astro mapping</h3>
+<ul>
+<li><code>gatsby-source-filesystem</code> + <code>gatsby-transformer-remark</code> + GraphQL: Astro <a href="https://docs.astro.build/en/guides/content-collections/">content collections</a>.</li>
+<li><code>gatsby-node</code> page creation: a single <code>[...slug].astro</code> route, built from the <code>path</code> frontmatter of each page and post.</li>
+<li>Posts archive pagination: <code>index.astro</code> and <code>page/[page].astro</code>.</li>
+<li><code>gatsby-plugin-feed</code>: <a href="https://docs.astro.build/en/recipes/rss/">@astrojs/rss</a>.</li>
+<li><code>gatsby-plugin-sitemap</code>: <a href="https://docs.astro.build/en/guides/integrations-guide/sitemap/">@astrojs/sitemap</a>.</li>
+<li><code>gatsby-plugin-manifest</code>: a static <code>manifest.webmanifest</code> and icons in the <code>public</code> folder.</li>
+<li><code>react-fontawesome</code>: Font Awesome SVG paths rendered inline, no React needed.</li>
+<li><code>static</code> folder: renamed to <code>public</code>.</li>
+</ul>
+<h3 id="tailwind-3-to-4">Tailwind 3 to 4</h3>
+<p>In the process, Tailwind was also upgraded from version 3 to 4, which moved the theme configuration into CSS and removed the need for PostCSS and <code>tailwind.config.js</code>.</p>
+<p>With Tailwind 3, the theme was defined in JavaScript:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// tailwind.config.js</span></span>
+<span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  content: [</span><span style="color:#9ECBFF">'./src/**/*.{js,md}'</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">  theme: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    extend: {</span></span>
+<span class="line"><span style="color:#E1E4E8">      colors: {</span></span>
+<span class="line"><span style="color:#9ECBFF">        'theme-blue'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'#2574a9'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        'typography-red'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'#bf616a'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">      spacing: {</span></span>
+<span class="line"><span style="color:#79B8FF">        84</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'21rem'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        88</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'22rem'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        92</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'23rem'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    fontFamily: {</span></span>
+<span class="line"><span style="color:#E1E4E8">      title: [</span><span style="color:#9ECBFF">'"Helvetica Neue"'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'Helvetica'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'Arial'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'sans-serif'</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">      body: [</span><span style="color:#9ECBFF">'"PT Sans"'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'Helvetica'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'Arial'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'sans-serif'</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  plugins: [</span><span style="color:#B392F0">require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'@tailwindcss/typography'</span><span style="color:#E1E4E8">)],</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p>With Tailwind 4, the same theme lives in the main CSS file:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#6A737D">/* global.css */</span></span>
+<span class="line"><span style="color:#F97583">@import</span><span style="color:#9ECBFF"> 'tailwindcss'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">@plugin</span><span style="color:#E1E4E8"> '@tailwindcss/typography';</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">@theme</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  --color-theme-blue: </span><span style="color:#FDAEB7;font-style:italic">#2574a9</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  --color-typography-red: </span><span style="color:#FDAEB7;font-style:italic">#bf616a;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  --font-title: 'Helvetica Neue', Helvetica, Arial, </span><span style="color:#85E89D">sans-serif</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  --font-body: 'PT Sans', Helvetica, Arial, </span><span style="color:#85E89D">sans-serif</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Classes like <code>bg-theme-blue</code> and <code>font-body</code> work exactly as before. The custom spacing values are gone too, since Tailwind 4 supports any spacing number out of the box, e.g. <code>w-92</code>. There is no need to list content files either, Tailwind 4 detects them automatically.</p>
+<p>Tailwind 3 also ran as a PostCSS plugin, which required <code>postcss.config.js</code>, <code>gatsby-plugin-postcss</code>, <code>postcss</code> and <code>autoprefixer</code>. Tailwind 4 comes with its own engine and plugs directly into Vite, the build tool behind Astro:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// astro.config.mjs</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { defineConfig } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'astro/config'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> tailwindcss </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '@tailwindcss/vite'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#B392F0"> defineConfig</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  vite: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    plugins: [</span><span style="color:#B392F0">tailwindcss</span><span style="color:#E1E4E8">()],</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<h3 id="before-and-after">Before and after</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Gatsby</th>
+<th>Astro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Packages in <code>package-lock.json</code></td>
+<td>1,709</td>
+<td>563</td>
+</tr>
+<tr>
+<td>Direct dependencies</td>
+<td>35</td>
+<td>17</td>
+</tr>
+<tr>
+<td>JavaScript on the home page</td>
+<td>~207 KB</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Production build (clean)</td>
+<td>~16.7s</td>
+<td>~1.8s</td>
+</tr>
+<tr>
+<td>Dev server ready</td>
+<td>~6.5s</td>
+<td>~1.7s</td>
+</tr>
+</tbody>
+</table>
+<p>The website looks the same, the URLs are the same, and the RSS feed is the same. It just depends on a lot less, and the whole feedback loop is faster: a production build now takes under 2 seconds, and the dev server is ready almost instantly.</p>
+<h2 id="good-to-know">Good to know</h2>
+<p>A couple of small things I came across along the way:</p>
+<ul>
+<li>
+<p><strong>GitHub Pages and Jekyll.</strong> Astro outputs its CSS in an <code>_astro</code> folder, and GitHub Pages ignores folders starting with an underscore, unless Jekyll processing is disabled. The deploy command needs the <code>--nojekyll</code> flag:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">astro</span><span style="color:#9ECBFF"> build</span><span style="color:#E1E4E8"> &amp;&amp; </span><span style="color:#B392F0">gh-pages</span><span style="color:#79B8FF"> -d</span><span style="color:#9ECBFF"> dist</span><span style="color:#79B8FF"> --nojekyll</span></span></code></pre>
+</li>
+<li>
+<p><strong>The sitemap only exists after a build.</strong> Visiting <code>/sitemap-index.xml</code> on <code>astro dev</code> returns a 404, use <code>astro build &amp;&amp; astro preview</code> instead.</p>
+</li>
+</ul>
+<h2 id="how-this-was-done">How this was done</h2>
+<p>I did this migration together with an AI coding agent, in a single afternoon. It went through the Gatsby codebase, proposed a plan, did the migration, and compared screenshots of the old and new builds side by side to make sure nothing changed visually. My part was mostly making decisions and reviewing.</p>
+<p>For a small website like this one, it turned a “someday” project into an afternoon.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The migration was smooth, and the result is a simpler and faster website that is easier to maintain. Astro has been a pleasure to work with, and I am looking forward to building more with it.</p>
+<p>Feel free to browse the updated <a href="https://github.com/giannisp/ioannispoulakas.com">source code</a>.</p>
+</div></div></div></div></body></html>
