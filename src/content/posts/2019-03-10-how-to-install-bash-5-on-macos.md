@@ -38,7 +38,7 @@ Install bash-completion on macOS:
 
 Initialize bash-completion@2 on `~/.bash_profile` with backwards compatibility:
 
-```
+```bash
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 ```
