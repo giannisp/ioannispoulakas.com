@@ -1,0 +1,20 @@
+---
+/**
+ * Home page: first page of the posts archive.
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostList from '../components/PostList.astro';
+import { site } from '../site';
+import { getSortedPosts } from '../utils/posts';
+
+const posts = await getSortedPosts();
+const hasNextPage = posts.length > site.postsPerPage;
+---
+
+<BaseLayout>
+  <PostList
+    posts={posts.slice(0, site.postsPerPage)}
+    nextPagePath={hasNextPage ? '/page/2/' : undefined}
+  />
+</BaseLayout>

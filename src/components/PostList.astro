@@ -1,0 +1,56 @@
+---
+/**
+ * Paginated list of posts with Older/Newer navigation.
+ */
+
+import type { CollectionEntry } from 'astro:content';
+
+import { formatDate } from '../utils/posts';
+
+interface Props {
+  posts: CollectionEntry<'posts'>[];
+  prevPagePath?: string;
+  nextPagePath?: string;
+}
+
+const { posts, prevPagePath, nextPagePath } = Astro.props;
+---
+
+<div>
+  {posts.map(({ data: { path, title, date } }) => (
+    <div class="mb-12">
+      <h1 class="text-theme-blue text-4xl font-bold">
+        <a href={path}>{title}</a>
+      </h1>
+
+      <p class="mt-2 text-xl text-gray-400">{formatDate(date)}</p>
+    </div>
+  ))}
+</div>
+
+<div class="mt-16 mb-24 sm:mb-16 flex text-center text-xl">
+  {nextPagePath ? (
+    <a
+      href={nextPagePath}
+      class="w-6/12 p-3 border-t border-b border-l rounded-tl rounded-bl border-gray-200 text-theme-blue hover:bg-gray-100"
+    >
+      Older
+    </a>
+  ) : (
+    <span class="w-6/12 p-3 border-t border-b border-l rounded-tl rounded-bl border-gray-200 text-gray-400">
+      Older
+    </span>
+  )}
+  {prevPagePath ? (
+    <a
+      href={prevPagePath}
+      class="w-6/12 p-3 border border-gray-200 rounded-tr rounded-br text-theme-blue hover:bg-gray-100"
+    >
+      Newer
+    </a>
+  ) : (
+    <span class="w-6/12 p-3 border border-gray-200 rounded-tr rounded-br text-gray-400">
+      Newer
+    </span>
+  )}
+</div>

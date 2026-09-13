@@ -1,0 +1,43 @@
+---
+/**
+ * Markdown pages and posts, served at the `path` set in their frontmatter.
+ */
+
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate } from '../utils/posts';
+
+export const getStaticPaths = (async () => {
+  const entries = [
+    ...(await getCollection('pages')),
+    ...(await getCollection('posts')),
+  ];
+
+  return entries.map((entry) => ({
+    params: { slug: entry.data.path.replace(/^\/|\/$/g, '') },
+    props: { entry },
+  }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const date = 'date' in entry.data ? entry.data.date : undefined;
+---
+
+<BaseLayout title={entry.data.title}>
+  <div class="mb-16">
+    {date ? (
+      <>
+        <h1 class="text-gray-800 text-4xl font-bold">{entry.data.title}</h1>
+        <p class="mt-2 mb-8 text-xl text-gray-400">{formatDate(date)}</p>
+      </>
+    ) : (
+      <h1 class="text-gray-800 text-4xl font-bold mb-4">{entry.data.title}</h1>
+    )}
+    <div class="prose prose-xl">
+      <Content />
+    </div>
+  </div>
+</BaseLayout>
